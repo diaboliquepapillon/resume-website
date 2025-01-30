@@ -7,28 +7,29 @@ const About = () => {
       <div className="max-w-3xl mx-auto px-4 animate-slide-up">
         <h2 className="text-4xl md:text-5xl font-bold mb-8">About</h2>
         <p className="text-lg md:text-xl leading-relaxed mb-12">
-          I'm a data scientist and machine learning engineer passionate about transforming data into actionable insights. 
-          With expertise in statistical analysis, machine learning, and data visualization, I help organizations make 
-          data-driven decisions.
+          Motivated and innovative Computer Science undergraduate at Monash University with a passion for data analytics, AI, and 
+          impactful solutions. Proficient in Python, SQL, Tableau, and cloud platforms, with practical experience in exploratory data 
+          analysis, predictive modeling, and data visualization. Strong communicator and team collaborator eager to simplify technical 
+          concepts and contribute to cutting-edge projects in AI and analytics.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-6 border border-black hover:bg-black hover:text-white transition-colors duration-300">
             <Brain className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Machine Learning</h3>
-            <p>Building intelligent systems that learn and adapt from data</p>
+            <h3 className="text-xl font-bold mb-2">Data Analysis</h3>
+            <p>Exploratory data analysis and predictive modeling for actionable insights</p>
           </div>
           
           <div className="p-6 border border-black hover:bg-black hover:text-white transition-colors duration-300">
             <Database className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Big Data</h3>
-            <p>Processing and analyzing large-scale datasets</p>
+            <h3 className="text-xl font-bold mb-2">Data Engineering</h3>
+            <p>SQL and Python for data extraction, automation, and visualizations</p>
           </div>
           
           <div className="p-6 border border-black hover:bg-black hover:text-white transition-colors duration-300">
             <ChartBar className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Data Visualization</h3>
-            <p>Creating meaningful visual representations of complex data</p>
+            <h3 className="text-xl font-bold mb-2">Visualization</h3>
+            <p>Creating impactful dashboards and reports using Tableau</p>
           </div>
         </div>
       </div>

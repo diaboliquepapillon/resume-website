@@ -2,18 +2,18 @@ import React from 'react';
 
 const projects = [
   {
-    title: "Predictive Analytics",
-    description: "Machine learning model for predicting customer behavior using Python and scikit-learn.",
+    title: "Transurban Data Analysis",
+    description: "Conducted exploratory data analysis (EDA) on large datasets to derive actionable insights and optimize traffic flow. Developed predictive models for customer behavior analysis.",
     link: "#"
   },
   {
-    title: "NLP Research",
-    description: "Natural Language Processing research project analyzing sentiment in social media data.",
+    title: "Faculty IT Ambassador",
+    description: "Enhanced collaboration across diverse cultural settings and delivered strategic communications about data science applications at Monash University.",
     link: "#"
   },
   {
-    title: "Data Pipeline",
-    description: "Automated ETL pipeline processing terabytes of data using Apache Spark.",
+    title: "Global Immersion Program",
+    description: "Partnered with cross-cultural teams in Indonesia to address global sustainability challenges, developing negotiation and teamwork skills.",
     link: "#"
   }
 ];
