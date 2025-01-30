@@ -2,18 +2,18 @@ import React from 'react';
 
 const projects = [
   {
-    title: "Project One",
-    description: "A minimal design project showcasing modern web technologies.",
+    title: "Predictive Analytics",
+    description: "Machine learning model for predicting customer behavior using Python and scikit-learn.",
     link: "#"
   },
   {
-    title: "Project Two",
-    description: "An innovative application built with React and TypeScript.",
+    title: "NLP Research",
+    description: "Natural Language Processing research project analyzing sentiment in social media data.",
     link: "#"
   },
   {
-    title: "Project Three",
-    description: "A responsive web application with clean architecture.",
+    title: "Data Pipeline",
+    description: "Automated ETL pipeline processing terabytes of data using Apache Spark.",
     link: "#"
   }
 ];
