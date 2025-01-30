@@ -22,3 +22,27 @@
 .section.animate {
   animation: slide-up 0.5s ease-out forwards;
 }
+
+.perspective-[1000px] {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-90 {
+  transform: rotateY(90deg);
+}
+
+.rotate-x-90 {
+  transform: rotateX(90deg);
+}
+
+.translate-z-\[128px\] {
+  transform: translateZ(128px);
+}
+
+.-translate-z-\[128px\] {
+  transform: translateZ(-128px);
+}
