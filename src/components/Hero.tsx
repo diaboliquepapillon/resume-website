@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Text content */}
           <div className="space-y-8">
-            <div className="space-y-4 opacity-0 animate-[slide-up_0.6s_ease-out_forwards]">
+            <div className="space-y-4 opacity-0 animate-[fade-in_0.8s_ease-out_forwards]">
               <h1 className="text-5xl lg:text-7xl font-bold text-primary bg-clip-text">
                 Aylin Vahabova
               </h1>
@@ -55,7 +55,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="space-y-6 opacity-0 animate-[slide-up_0.6s_ease-out_0.3s_forwards]">
+            <div className="space-y-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards]">
               <h2 className="text-2xl lg:text-3xl text-primary/90 font-semibold">
                 Data Scientist
               </h2>
@@ -67,7 +67,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-6 opacity-0 animate-[slide-up_0.6s_ease-out_0.6s_forwards]">
+            <div className="flex flex-wrap gap-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.6s_forwards]">
               <a 
                 href="#projects" 
                 className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2"
@@ -92,7 +92,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-[fade-in_0.5s_ease-out_1.2s_forwards]">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-[fade-in_0.8s_ease-out_1.2s_forwards]">
         <button 
           onClick={scrollToProjects} 
           className="text-primary/60 hover:text-primary transition-colors duration-300 p-2"
