@@ -42,7 +42,8 @@ const workExperience = [
     description: [
       "Represented over 3,000 residents in advocating for improved residential standards",
       "Conducted detailed research and data analysis on residential conditions, providing actionable recommendations that enhanced living standards"
-    ]
+    ],
+    skills: ["Data Analysis", "Research", "Advocacy", "Leadership", "Problem-Solving"]
   },
   {
     title: "IBL Intern",
@@ -53,7 +54,8 @@ const workExperience = [
       "Developed predictive models and conducted EDA to derive insights into customer behaviour and optimise pricing strategies",
       "Utilised SQL and Python for data extraction and analysis, employing tools like Jupyter Notebook for automation and visualisations",
       "Created data-driven reports and dashboards using Tableau to track key performance indicators (KPIs)"
-    ]
+    ],
+    skills: ["Python", "SQL", "Tableau", "Data Analysis", "Predictive Modeling", "Data Visualization"]
   },
   {
     title: "Faculty of IT Ambassador",
@@ -62,7 +64,8 @@ const workExperience = [
     description: [
       "Represented the Faculty of IT at events, enhancing collaboration and teamwork across diverse cultural settings",
       "Delivered strategic communications to engage students and stakeholders, enhancing the understanding of data science applications"
-    ]
+    ],
+    skills: ["Public Speaking", "Communication", "Event Management", "Cultural Awareness", "Leadership"]
   },
   {
     title: "Alumni Support Assistant",
@@ -74,7 +77,8 @@ const workExperience = [
       "Raised $18,275 across 65 contributions in 2024",
       "Contributed to raising $9,950 in 2023, with a 50% recurring gift ratio, 26 recurring gifts out of 52 unique donors",
       "Collaborated with cross-functional teams to present insights from data models, improving decision-making"
-    ]
+    ],
+    skills: ["Data Analytics", "Relationship Management", "Communication", "Fundraising", "Strategic Planning"]
   }
 ];
 

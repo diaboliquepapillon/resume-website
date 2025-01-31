@@ -14,6 +14,7 @@ interface WorkExperience {
   company: string;
   period: string;
   description: string[];
+  skills: string[];
 }
 
 interface WorkExperienceDialogProps {
@@ -54,6 +55,19 @@ const WorkExperienceDialog: React.FC<WorkExperienceDialogProps> = ({ workExperie
                           <li key={idx} className="text-primary">{desc}</li>
                         ))}
                       </ul>
+                      <div className="mt-4">
+                        <h5 className="font-semibold text-primary mb-2">Key Skills:</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {work.skills.map((skill, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-3 py-1 bg-accent1/20 text-primary rounded-full text-sm"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
