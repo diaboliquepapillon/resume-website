@@ -1,22 +1,29 @@
 import React from 'react';
-import { AreaChart, Area, ResponsiveContainer } from 'recharts';
-import { BrainCircuit, Network, Database, LineChart, Binary, Cpu } from 'lucide-react';
+import { LineChart, Line, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { Binary, BrainCircuit, Network, Code, Database, LineChart as LineChartIcon, Sparkles, Stars, Cpu } from 'lucide-react';
 
-const data = [
-  { value: 30, value2: 10 },
-  { value: 40, value2: 30 },
-  { value: 35, value2: 20 },
-  { value: 50, value2: 40 },
-  { value: 45, value2: 30 },
-  { value: 60, value2: 50 },
-];
+const generateData = (length: number) => {
+  return Array.from({ length }, (_, i) => ({
+    value: Math.sin(i / 5) * 50 + 50,
+    value2: Math.cos(i / 3) * 30 + 50,
+    value3: Math.sin(i / 4) * 40 + 60
+  }));
+};
+
+const data = generateData(30);
 
 const Room = () => {
   return (
-    <div className="w-full h-full perspective-[1000px]">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent1/20 via-transparent to-accent2/20 animate-pulse" 
-           style={{ animationDuration: '4s' }} />
+    <div className="relative w-full h-full overflow-hidden rounded-2xl border border-primary/10 bg-gradient-to-br from-white/50 to-transparent backdrop-blur-sm shadow-xl transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-500">
+      {/* Enhanced background gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent1/30 rounded-full filter blur-3xl animate-pulse" 
+             style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent2/30 rounded-full filter blur-3xl animate-pulse" 
+             style={{ animationDuration: '5s' }} />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/20 rounded-full filter blur-3xl animate-pulse" 
+             style={{ animationDuration: '6s' }} />
+      </div>
 
       {/* Main content container with enhanced 3D effect */}
       <div className="relative z-10 w-full h-full flex items-center justify-center p-8 transform-style-preserve-3d">
@@ -25,16 +32,16 @@ const Room = () => {
           {[
             { Icon: BrainCircuit, label: 'AI', position: '-left-4 top-1/4', delay: '0.2s', color: 'accent1' },
             { Icon: Network, label: 'Neural Networks', position: '-right-4 top-1/3', delay: '0.4s', color: 'accent2' },
-            { Icon: Database, label: 'Big Data', position: 'left-1/4 -bottom-4', delay: '0.6s', color: 'accent1' },
-            { Icon: LineChart, label: 'Analytics', position: 'right-1/4 -top-4', delay: '0.8s', color: 'accent2' },
-            { Icon: Binary, label: 'Deep Learning', position: 'left-1/3 -top-4', delay: '1s', color: 'accent1' },
-            { Icon: Cpu, label: 'Machine Learning', position: 'right-1/3 -bottom-4', delay: '1.2s', color: 'accent2' },
+            { Icon: Database, label: 'Big Data', position: 'left-1/4 -top-4', delay: '0.6s', color: 'primary' },
+            { Icon: Code, label: 'ML Models', position: 'right-1/4 -bottom-4', delay: '0.8s', color: 'accent1' },
+            { Icon: LineChartIcon, label: 'Analytics', position: 'left-1/3 bottom-0', delay: '1s', color: 'accent2' },
+            { Icon: Cpu, label: 'Deep Learning', position: 'right-1/3 top-0', delay: '1.2s', color: 'primary' }
           ].map(({ Icon, label, position, delay, color }) => (
             <div 
               key={label}
-              className={`absolute ${position} opacity-0 flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-105 transition-transform duration-300`}
+              className={`absolute ${position} opacity-0 flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-all duration-300`}
               style={{ 
-                animation: 'fade-in 1.2s ease-out forwards',
+                animation: 'fade-in 0.8s ease-out forwards',
                 animationDelay: delay,
                 animationFillMode: 'forwards'
               }}
@@ -45,46 +52,40 @@ const Room = () => {
           ))}
 
           {/* Enhanced main chart with smooth animation */}
-          <div className="absolute inset-0 opacity-0" 
-               style={{ 
-                 animation: 'fade-in 1.5s ease-out forwards',
-                 animationDelay: '0.3s'
-               }}>
+          <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}>
                 <defs>
                   <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#f1c2dc" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#f1c2dc" stopOpacity={0.2}/>
+                    <stop offset="5%" stopColor="#26574a" stopOpacity={0.4}/>
+                    <stop offset="95%" stopColor="#26574a" stopOpacity={0}/>
                   </linearGradient>
                   <linearGradient id="colorValue2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#cdd673" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#cdd673" stopOpacity={0.2}/>
+                    <stop offset="5%" stopColor="#f1c2dc" stopOpacity={0.4}/>
+                    <stop offset="95%" stopColor="#f1c2dc" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <Area 
                   type="monotone" 
                   dataKey="value" 
-                  stroke="#f1c2dc" 
+                  stroke="#26574a" 
                   fillOpacity={1} 
                   fill="url(#colorValue)" 
                   strokeWidth={2}
                   isAnimationActive={true}
-                  animationBegin={0}
-                  animationDuration={2000}
-                  animationEasing="ease-out-cubic"
+                  animationDuration={1500}
+                  animationEasing="ease-out"
                 />
                 <Area 
                   type="monotone" 
                   dataKey="value2" 
-                  stroke="#cdd673" 
+                  stroke="#f1c2dc" 
                   fillOpacity={1} 
                   fill="url(#colorValue2)" 
                   strokeWidth={2}
                   isAnimationActive={true}
-                  animationBegin={500}
-                  animationDuration={2000}
-                  animationEasing="ease-out-cubic"
+                  animationDuration={1500}
+                  animationEasing="ease-out"
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -92,16 +93,16 @@ const Room = () => {
 
           {/* Subtle floating particles */}
           <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
+            {[...Array(30)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1.5 h-1.5 bg-primary/20 rounded-full"
+                className="absolute w-2 h-2 bg-primary/30 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animation: 'pulse 4s ease-in-out infinite',
-                  animationDelay: `${Math.random() * 3}s`,
-                  transform: `translateZ(${Math.random() * 40}px)`
+                  animation: 'pulse 3s ease-in-out infinite',
+                  animationDelay: `${Math.random() * 2}s`,
+                  transform: `translateZ(${Math.random() * 50}px)`
                 }}
               />
             ))}
