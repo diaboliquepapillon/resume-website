@@ -1,19 +1,71 @@
 import React from 'react';
-import { FileText } from 'lucide-react';
+import { FileText, Download, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const ResumeTab = () => {
   return (
-    <div className="text-center">
-      <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">Resume</h2>
-      <p className="text-lg mb-8">Download my latest resume to learn more about my experience and skills.</p>
-      <a 
-        href="/path-to-your-resume.pdf" 
-        download
-        className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all duration-300"
-      >
-        <FileText className="w-5 h-5" />
-        Download Resume
-      </a>
+    <div className="max-w-4xl mx-auto">
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-primary animate-fade-in">Resume</h2>
+        <div className="flex gap-4">
+          <Button
+            onClick={() => window.open('/resume.pdf', '_blank')}
+            className="flex items-center gap-2 bg-primary hover:bg-primary/90"
+          >
+            <ExternalLink className="w-4 h-4" />
+            View PDF
+          </Button>
+          <Button
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/resume.pdf';
+              link.download = 'Aylin_Vahabova_Resume.pdf';
+              link.click();
+            }}
+            className="flex items-center gap-2 bg-accent1 hover:bg-accent1/90"
+          >
+            <Download className="w-4 h-4" />
+            Download
+          </Button>
+        </div>
+      </div>
+
+      <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-primary/20">
+        {/* Header Section */}
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-bold mb-2">Aylin Vahabova</h1>
+          <div className="flex justify-center gap-6 text-primary/80">
+            <span className="flex items-center gap-1">
+              <Mail className="w-4 h-4" />
+              aylin.vahabova@monash.edu
+            </span>
+            <span className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" />
+              Melbourne, Australia
+            </span>
+          </div>
+        </div>
+
+        {/* Summary Section */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <FileText className="w-5 h-5 text-primary" />
+            Professional Summary
+          </h3>
+          <p className="text-primary/80">
+            Data Science student at Monash University with experience in data analysis, 
+            machine learning, and software development. Proven track record in applying 
+            analytical skills to real-world problems through internships and academic projects.
+          </p>
+        </div>
+
+        {/* Preview Note */}
+        <div className="text-center mt-8 p-4 bg-accent2/10 rounded-lg">
+          <p className="text-primary/80">
+            This is a preview of my resume. For the full detailed version, please download the PDF above.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
