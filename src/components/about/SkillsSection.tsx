@@ -11,14 +11,14 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ softSkills, programmingSk
   const programmingIcons = [Code, Rocket, Zap, Coffee, Brain, Sparkles];
 
   return (
-    <div className="mt-16 space-y-12">
+    <div className="grid md:grid-cols-2 gap-8">
       {/* Soft Skills */}
-      <div className="p-8 rounded-2xl bg-gradient-to-br from-accent1/10 via-white to-accent2/10 border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      <div className="p-8 rounded-2xl bg-gradient-to-br from-accent1/10 via-white to-accent2/10 border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex items-center gap-3 mb-8">
-          <Brain className="w-8 h-8 text-primary animate-pulse" />
+          <Brain className="w-6 h-6 text-primary animate-pulse" />
           <h3 className="text-2xl font-bold text-primary">Soft Skills</h3>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {softSkills.map((skill, index) => (
             <div
               key={skill}
@@ -35,12 +35,12 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ softSkills, programmingSk
       </div>
 
       {/* Programming Skills */}
-      <div className="p-8 rounded-2xl bg-gradient-to-br from-accent2/10 via-white to-accent1/10 border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      <div className="p-8 rounded-2xl bg-gradient-to-br from-accent2/10 via-white to-accent1/10 border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="flex items-center gap-3 mb-8">
-          <Code className="w-8 h-8 text-primary animate-pulse" />
+          <Code className="w-6 h-6 text-primary animate-pulse" />
           <h3 className="text-2xl font-bold text-primary">Programming</h3>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {programmingSkills.map((skill, index) => (
             <div
               key={skill}

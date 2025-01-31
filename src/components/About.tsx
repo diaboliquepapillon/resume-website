@@ -172,7 +172,7 @@ const About = () => {
     <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-b from-background via-background to-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-accent1/10 to-accent2/10 pointer-events-none" />
       
-      <div className="max-w-4xl mx-auto px-4 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <Tabs defaultValue="about" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-8 bg-primary/90 backdrop-blur-sm rounded-xl border border-primary/20 shadow-lg">
             <TabsTrigger value="about" className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300">
@@ -187,7 +187,7 @@ const About = () => {
           </TabsList>
 
           <TabsContent value="about">
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-12 animate-fade-in">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">About Me</h2>
               <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg animate-fade-in">
                 Passionate Computer Science undergraduate at Monash University with expertise in AI, data analytics, and cloud technologies. 
@@ -202,8 +202,10 @@ const About = () => {
                 <VolunteerExperienceDialog volunteerExperience={volunteerExperience} />
               </div>
 
-              <InterestsSection />
-              <SkillsSection softSkills={softSkills} programmingSkills={programmingSkills} />
+              <div className="grid grid-cols-1 gap-12">
+                <InterestsSection />
+                <SkillsSection softSkills={softSkills} programmingSkills={programmingSkills} />
+              </div>
             </div>
           </TabsContent>
 
