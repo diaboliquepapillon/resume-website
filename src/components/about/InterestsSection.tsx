@@ -1,34 +1,86 @@
 import React from 'react';
-import { Heart, Gamepad, Plane, Utensils } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const InterestsSection = () => {
-  const interests = [
-    { icon: <Gamepad className="w-6 h-6" />, label: "Gaming", color: "bg-accent1/40" },
-    { icon: <Plane className="w-6 h-6" />, label: "Traveling", color: "bg-accent2/40" },
-    { icon: <Heart className="w-6 h-6" />, label: "Volunteering", color: "bg-accent1/40" },
-    { icon: <Utensils className="w-6 h-6" />, label: "Cooking", color: "bg-accent2/40" }
-  ];
+  const createFloatingEmoji = (emoji: string, index: number, x: number) => {
+    const span = document.createElement("span");
+    span.innerText = emoji;
+    span.style.position = "fixed";
+    span.style.left = `${x}px`;
+    span.style.top = "50%";
+    span.style.transform = "translate(-50%, -50%)";
+    span.style.fontSize = "24px";
+    span.style.pointerEvents = "none";
+    span.style.animation = "float-up 2s ease-out forwards";
+    span.style.opacity = "1";
+    span.style.zIndex = "50";
+    
+    document.body.appendChild(span);
+    
+    setTimeout(() => span.remove(), 2000);
+  };
+
+  // Add the animation style to the document
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes float-up {
+        0% {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -200%);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  const handleInterestClick = (emojis: string[], event: React.MouseEvent) => {
+    const rect = (event.target as HTMLElement).getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    
+    emojis.forEach((emoji, index) => {
+      const offsetX = centerX + (Math.random() - 0.5) * 100; // Spread emojis horizontally
+      setTimeout(() => createFloatingEmoji(emoji, index, offsetX), index * 200);
+    });
+  };
 
   return (
-    <div className="mt-8 p-8 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-primary/20 shadow-lg transition-all duration-300 hover:shadow-xl">
-      <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
-        <Heart className="w-6 h-6 text-primary animate-pulse" />
-        Fun & Interests
+    <div className="mt-8 bg-white p-8 rounded-xl border-2 border-primary/20 shadow-lg animate-fade-in hover:border-primary/40 transition-all duration-300">
+      <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+        <Heart className="w-6 h-6 text-primary" />
+        Interests
       </h3>
-      
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {interests.map((interest, index) => (
-          <div
-            key={index}
-            className={`${interest.color} p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in flex flex-col items-center gap-2`}
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            <div className="p-3 bg-white rounded-full shadow-inner">
-              {interest.icon}
-            </div>
-            <span className="font-medium text-primary">{interest.label}</span>
-          </div>
-        ))}
+      <p className="text-sm text-primary/60 mb-4">Click me!</p>
+      <div className="flex flex-wrap gap-4">
+        <div 
+          className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+          onClick={(e) => handleInterestClick(["✈️", "🌎", "🧳", "🗺️"], e)}
+        >
+          Traveling
+        </div>
+        <div 
+          className="group relative px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+          onClick={(e) => handleInterestClick(["⚽", "🥅", "🏃‍♂️", "🎯"], e)}
+        >
+          Soccer
+        </div>
+        <div 
+          className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+          onClick={(e) => handleInterestClick(["🎬", "🍿", "📽️", "⭐"], e)}
+        >
+          Movie reviewing
+        </div>
+        <div 
+          className="group relative px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+          onClick={(e) => handleInterestClick(["🧁", "🥖", "🎂", "👨‍🍳"], e)}
+        >
+          Baking
+        </div>
       </div>
     </div>
   );
