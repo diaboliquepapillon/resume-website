@@ -137,21 +137,28 @@ const About = () => {
                       <p className="text-primary/80">Click to view educational background</p>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="bg-background/95 backdrop-blur-sm">
+                  <DialogContent className="bg-background/95 backdrop-blur-md border border-white/20 shadow-xl max-w-2xl w-[90vw] animate-in zoom-in-90 duration-300">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-primary">Education</DialogTitle>
+                      <DialogTitle className="text-3xl font-bold text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Education Journey</DialogTitle>
                       <DialogDescription>
-                        <div className="mt-4 space-y-4">
+                        <div className="mt-6 space-y-6">
                           {education.map((edu, index) => (
                             <div 
                               key={index} 
-                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg"
+                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg transform hover:translate-y-[-2px] group"
                               style={{ animationDelay: `${index * 100}ms` }}
                             >
-                              <h4 className="font-bold text-lg text-primary">{edu.degree}</h4>
-                              <p className="text-primary/80">{edu.institution}</p>
-                              <p className="text-primary/70">{edu.year}</p>
-                              <p className="text-primary/90 mt-2">{edu.details}</p>
+                              <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-accent1/20 group-hover:bg-accent1/30 transition-colors">
+                                  <GraduationCap className="w-6 h-6 text-primary" />
+                                </div>
+                                <div className="space-y-2">
+                                  <h4 className="font-bold text-xl text-primary group-hover:text-primary/90 transition-colors">{edu.degree}</h4>
+                                  <p className="text-primary/80 font-medium">{edu.institution}</p>
+                                  <p className="text-primary/70">{edu.year}</p>
+                                  <p className="text-primary/90 mt-2 leading-relaxed">{edu.details}</p>
+                                </div>
+                              </div>
                             </div>
                           ))}
                         </div>
@@ -168,21 +175,28 @@ const About = () => {
                       <p className="text-primary/80">Click to view work history</p>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="bg-background/95 backdrop-blur-sm">
+                  <DialogContent className="bg-background/95 backdrop-blur-md border border-white/20 shadow-xl max-w-2xl w-[90vw] animate-in zoom-in-90 duration-300">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-primary">Work Experience</DialogTitle>
+                      <DialogTitle className="text-3xl font-bold text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Professional Experience</DialogTitle>
                       <DialogDescription>
-                        <div className="mt-4 space-y-4">
+                        <div className="mt-6 space-y-6">
                           {workExperience.map((work, index) => (
                             <div 
                               key={index} 
-                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg"
+                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg transform hover:translate-y-[-2px] group"
                               style={{ animationDelay: `${index * 100}ms` }}
                             >
-                              <h4 className="font-bold text-lg text-primary">{work.title}</h4>
-                              <p className="text-primary/80">{work.company}</p>
-                              <p className="text-primary/70">{work.period}</p>
-                              <p className="text-primary/90 mt-2">{work.description}</p>
+                              <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-accent2/20 group-hover:bg-accent2/30 transition-colors">
+                                  <Briefcase className="w-6 h-6 text-primary" />
+                                </div>
+                                <div className="space-y-2">
+                                  <h4 className="font-bold text-xl text-primary group-hover:text-primary/90 transition-colors">{work.title}</h4>
+                                  <p className="text-primary/80 font-medium">{work.company}</p>
+                                  <p className="text-primary/70">{work.period}</p>
+                                  <p className="text-primary/90 mt-2 leading-relaxed">{work.description}</p>
+                                </div>
+                              </div>
                             </div>
                           ))}
                         </div>
@@ -199,18 +213,25 @@ const About = () => {
                       <p className="text-primary/80">Click to view certifications</p>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="bg-background/95 backdrop-blur-sm">
+                  <DialogContent className="bg-background/95 backdrop-blur-md border border-white/20 shadow-xl max-w-2xl w-[90vw] animate-in zoom-in-90 duration-300">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-primary">Certifications</DialogTitle>
+                      <DialogTitle className="text-3xl font-bold text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Professional Certifications</DialogTitle>
                       <DialogDescription>
-                        <div className="mt-4 space-y-4">
+                        <div className="mt-6 space-y-6">
                           {certifications.map((cert, index) => (
                             <div 
                               key={index} 
-                              className="p-4 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg"
+                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg transform hover:translate-y-[-2px] group"
                               style={{ animationDelay: `${index * 100}ms` }}
                             >
-                              {cert}
+                              <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-accent1/20 group-hover:bg-accent1/30 transition-colors">
+                                  <Award className="w-6 h-6 text-primary" />
+                                </div>
+                                <div className="space-y-2">
+                                  <p className="text-lg font-medium text-primary group-hover:text-primary/90 transition-colors">{cert}</p>
+                                </div>
+                              </div>
                             </div>
                           ))}
                         </div>
