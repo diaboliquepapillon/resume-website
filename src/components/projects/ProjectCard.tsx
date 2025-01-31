@@ -8,6 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Github, ExternalLink, Award, ArrowRight, Trophy } from 'lucide-react';
+import ProjectDetails from './ProjectDetails';
 
 interface ProjectCardProps {
   project: {
