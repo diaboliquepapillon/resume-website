@@ -246,18 +246,74 @@ const About = () => {
                   Interests
                 </h3>
                 <div className="flex flex-wrap gap-4">
-                  <span className="px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
+                  <div 
+                    className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+                    onClick={() => {
+                      const emojis = ["✈️", "🌎", "🧳", "🗺️"];
+                      emojis.forEach((emoji, index) => {
+                        const span = document.createElement("span");
+                        span.innerText = emoji;
+                        span.className = "absolute animate-float pointer-events-none";
+                        span.style.left = `${Math.random() * 100}%`;
+                        span.style.animationDelay = `${index * 0.2}s`;
+                        document.body.appendChild(span);
+                        setTimeout(() => span.remove(), 3000);
+                      });
+                    }}
+                  >
                     Traveling
-                  </span>
-                  <span className="px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
+                  </div>
+                  <div 
+                    className="group relative px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+                    onClick={() => {
+                      const emojis = ["⚽", "🥅", "🏃‍♂️", "🎯"];
+                      emojis.forEach((emoji, index) => {
+                        const span = document.createElement("span");
+                        span.innerText = emoji;
+                        span.className = "absolute animate-float pointer-events-none";
+                        span.style.left = `${Math.random() * 100}%`;
+                        span.style.animationDelay = `${index * 0.2}s`;
+                        document.body.appendChild(span);
+                        setTimeout(() => span.remove(), 3000);
+                      });
+                    }}
+                  >
                     Soccer
-                  </span>
-                  <span className="px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
+                  </div>
+                  <div 
+                    className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+                    onClick={() => {
+                      const emojis = ["🎬", "🍿", "📽️", "⭐"];
+                      emojis.forEach((emoji, index) => {
+                        const span = document.createElement("span");
+                        span.innerText = emoji;
+                        span.className = "absolute animate-float pointer-events-none";
+                        span.style.left = `${Math.random() * 100}%`;
+                        span.style.animationDelay = `${index * 0.2}s`;
+                        document.body.appendChild(span);
+                        setTimeout(() => span.remove(), 3000);
+                      });
+                    }}
+                  >
                     Movie reviewing
-                  </span>
-                  <span className="px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
+                  </div>
+                  <div 
+                    className="group relative px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
+                    onClick={() => {
+                      const emojis = ["🧁", "🥖", "🎂", "👨‍🍳"];
+                      emojis.forEach((emoji, index) => {
+                        const span = document.createElement("span");
+                        span.innerText = emoji;
+                        span.className = "absolute animate-float pointer-events-none";
+                        span.style.left = `${Math.random() * 100}%`;
+                        span.style.animationDelay = `${index * 0.2}s`;
+                        document.body.appendChild(span);
+                        setTimeout(() => span.remove(), 3000);
+                      });
+                    }}
+                  >
                     Baking
-                  </span>
+                  </div>
                 </div>
               </div>
 
