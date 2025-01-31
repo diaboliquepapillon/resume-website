@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Github, ExternalLink, Award } from 'lucide-react';
+import { Github, ExternalLink, Award, ArrowRight } from 'lucide-react';
 
 const projects = [
   {
@@ -54,72 +54,97 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="min-h-screen py-20 bg-gradient-to-b from-background to-background/95">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up text-primary">
+    <section id="projects" className="min-h-screen py-20 bg-gradient-to-b from-background via-background to-accent1/10 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(241,194,220,0.1),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(205,214,115,0.1),transparent_50%)]" />
+      
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-6xl font-bold animate-slide-up text-primary">
             Projects & Experience
           </h2>
-          <p className="text-lg text-primary/80 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary/80 max-w-3xl mx-auto animate-fade-in">
             Explore my journey through data science and machine learning, featuring projects 
             that demonstrate my expertise in turning complex challenges into innovative solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <div 
-                  className="group relative overflow-hidden rounded-xl border border-primary/20 bg-white/50 backdrop-blur-sm 
-                           hover:border-primary/40 transition-all duration-300 animate-slide-up cursor-pointer"
+                  className="group relative overflow-hidden rounded-2xl border border-primary/20 bg-white/80 backdrop-blur-sm 
+                           hover:border-primary/40 transition-all duration-500 animate-slide-up cursor-pointer
+                           hover:shadow-2xl hover:-translate-y-1"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-2xl font-bold mb-2 group-hover:text-accent1 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-white/90 line-clamp-2">{project.description}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-3 text-primary group-hover:text-primary/80 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-primary/70 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 3).map((tech, i) => (
+                  
+                  <div className="p-6 space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, i) => (
                         <span 
                           key={i}
-                          className="px-3 py-1 text-sm bg-accent1/20 text-primary/70 rounded-full"
+                          className="px-3 py-1 text-sm bg-accent1/10 text-primary/70 rounded-full
+                                   hover:bg-accent1/20 transition-colors duration-300"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
+                    
+                    <div className="flex justify-between items-center pt-2">
+                      <div className="flex gap-2">
+                        {project.achievements.slice(0, 1).map((achievement, i) => (
+                          <span 
+                            key={i}
+                            className="flex items-center gap-1 text-sm text-primary/60"
+                          >
+                            <Award className="w-4 h-4" />
+                            {achievement}
+                          </span>
+                        ))}
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-primary/40 group-hover:text-primary/80 transform group-hover:translate-x-1 transition-all" />
+                    </div>
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[600px]">
+              
+              <DialogContent className="sm:max-w-[700px] bg-background/95 backdrop-blur-sm">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold text-primary">{project.title}</DialogTitle>
                   <DialogDescription>
-                    <div className="mt-4 space-y-6">
+                    <div className="mt-6 space-y-6">
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-48 object-cover rounded-lg"
+                        className="w-full h-64 object-cover rounded-xl shadow-lg"
                       />
-                      <p className="text-primary/80">{project.details}</p>
+                      <p className="text-lg text-primary/80 leading-relaxed">{project.details}</p>
                       
                       <div className="space-y-4">
-                        <h4 className="font-semibold text-primary">Technologies Used</h4>
+                        <h4 className="font-semibold text-primary text-lg">Technologies Used</h4>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech, i) => (
                             <span 
                               key={i}
-                              className="px-3 py-1 text-sm bg-accent1/20 text-primary/70 rounded-full"
+                              className="px-4 py-2 text-sm bg-accent1/20 text-primary/70 rounded-full
+                                       hover:bg-accent1/30 transition-colors duration-300"
                             >
                               {tech}
                             </span>
@@ -128,12 +153,12 @@ const Projects = () => {
                       </div>
                       
                       <div className="space-y-4">
-                        <h4 className="font-semibold text-primary">Key Achievements</h4>
-                        <ul className="space-y-2">
+                        <h4 className="font-semibold text-primary text-lg">Key Achievements</h4>
+                        <ul className="space-y-3">
                           {project.achievements.map((achievement, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <Award className="w-5 h-5 text-primary/60" />
-                              <span className="text-primary/80">{achievement}</span>
+                            <li key={i} className="flex items-center gap-3 group">
+                              <Award className="w-5 h-5 text-primary/60 group-hover:text-primary transition-colors" />
+                              <span className="text-primary/80 group-hover:text-primary transition-colors">{achievement}</span>
                             </li>
                           ))}
                         </ul>
@@ -144,7 +169,8 @@ const Projects = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                          className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl
+                                   hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
                         >
                           <Github className="w-5 h-5" />
                           View Code
@@ -153,7 +179,8 @@ const Projects = () => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
+                          className="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-xl
+                                   hover:bg-primary/10 transition-all duration-300 hover:scale-105 shadow-lg"
                         >
                           <ExternalLink className="w-5 h-5" />
                           Live Demo
