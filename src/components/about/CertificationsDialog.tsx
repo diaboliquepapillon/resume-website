@@ -13,6 +13,17 @@ interface CertificationsDialogProps {
   certifications: string[];
 }
 
+const getCertificationLogo = (cert: string): string => {
+  if (cert.includes('Atlassian')) return 'https://cdn.worldvectorlogo.com/logos/atlassian-1.svg';
+  if (cert.includes('LinkedIn')) return 'https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg';
+  if (cert.includes('Microsoft')) return 'https://cdn.worldvectorlogo.com/logos/microsoft-5.svg';
+  if (cert.includes('ServiceNow')) return 'https://cdn.worldvectorlogo.com/logos/servicenow-2.svg';
+  if (cert.includes('Hootsuite')) return 'https://cdn.worldvectorlogo.com/logos/hootsuite-1.svg';
+  if (cert.includes('Dataiku')) return 'https://cdn.worldvectorlogo.com/logos/dataiku-2.svg';
+  if (cert.includes('Negotiation')) return 'https://americannegotiationinstitute.com/wp-content/uploads/2021/03/ANI-Logo.png';
+  return 'https://via.placeholder.com/50';
+};
+
 const CertificationsDialog: React.FC<CertificationsDialogProps> = ({ certifications }) => {
   return (
     <Dialog>
@@ -34,11 +45,19 @@ const CertificationsDialog: React.FC<CertificationsDialogProps> = ({ certificati
                   className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
-                      <Award className="w-6 h-6" />
+                  <div className="flex items-center gap-4">
+                    <div className="flex-shrink-0">
+                      <img 
+                        src={getCertificationLogo(cert)} 
+                        alt={`${cert} logo`}
+                        className="w-12 h-12 object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = 'https://via.placeholder.com/50';
+                        }}
+                      />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-grow">
                       <p className="text-lg font-medium text-primary">{cert}</p>
                     </div>
                   </div>
