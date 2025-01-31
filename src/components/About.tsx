@@ -24,43 +24,60 @@ const education = [
     degree: "Bachelor of Computer Science",
     institution: "Monash University",
     year: "2021-2024",
-    details: "Major in Data Science"
+    details: "Data Science Major on Full-Scholarship\nAncora Imparo Leadership Program Participant\nWomen in IT mentoring program mentee\nGlobal Immersion Guarantee Participant in Indonesia"
   }
 ];
 
 const workExperience = [
   {
-    title: "Data Science Intern",
+    title: "IBL Intern",
     company: "Transurban",
-    period: "2023",
-    description: "Analyzed traffic patterns and developed predictive models"
+    period: "Jul 2024 - Dec 2024",
+    description: "Conducted exploratory data analysis (EDA) on large datasets to derive actionable insights and optimise traffic flow. Developed predictive models and conducted EDA to derive insights into customer behaviour and optimise pricing strategies. Utilised SQL and Python for data extraction and analysis, employing tools like Jupyter Notebook for automation and visualisations. Created data-driven reports and dashboards using Tableau to track key performance indicators (KPIs)."
   },
   {
-    title: "Faculty IT Ambassador",
+    title: "Faculty of IT Ambassador",
     company: "Monash University",
-    period: "2022-2023",
-    description: "Provided technical support and conducted workshops"
+    period: "Jul 2023 - Present",
+    description: "Represented the Faculty of IT at events, enhancing collaboration and teamwork across diverse cultural settings. Delivered strategic communications to engage students and stakeholders, enhancing the understanding of data science applications."
+  },
+  {
+    title: "Alumni Support Assistant",
+    company: "Monash University",
+    period: "Jun 2023 - Dec 2024",
+    description: "Fostered strong relationships with alumni and donors, emphasising the transformational impact of their contributions on scholarships and university programs. Utilised data analytics to develop and optimize engagement strategies, resulting in a 62.5% recurring gift ratio and raising $18,275 across 65 contributions in 2024. Contributed to raising $9,950 in 2023, with a 50% recurring gift ratio, 26 recurring gifts out of 52 unique donors. Collaborated with cross-functional teams to present insights from data models, improving decision-making and achieving buy-in from stakeholders."
+  },
+  {
+    title: "Residential Advisor",
+    company: "Monash Residential Services",
+    period: "June 2023 - Dec 2024",
+    description: "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students in their residential community. Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills."
+  },
+  {
+    title: "Russian Language Drop-in",
+    company: "Monash Student Association",
+    period: "June 2023 - Oct 2023",
+    description: "Fostered cultural exchange and language learning by teaching Russian to 20+ students, enhancing communication and engagement within the university community."
   }
 ];
 
 const softSkills = [
   "Leadership",
   "Communication",
-  "Analytical Thinking",
   "Problem-Solving",
-  "Client Negotiation"
+  "Data Analysis",
+  "Strategic Thinking"
 ];
 
 const programmingSkills = [
   "Python",
   "SQL",
-  "R",
   "Tableau",
   "Jupyter Notebook",
   "Statistical Modeling",
-  "HTML5",
-  "CSS3",
-  "C++"
+  "Data Visualization",
+  "Predictive Modeling",
+  "Cloud Technologies"
 ];
 
 const impossibleList = {
@@ -119,9 +136,9 @@ const About = () => {
                 About Me
               </h2>
               <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg animate-fade-in">
-                Motivated Computer Science undergraduate at Monash University with proven expertise in data analytics and community leadership. 
-                Successfully utilized data analytics to optimize engagement strategies, achieving a 62.5% recurring gift ratio and raising over $18,275 
-                across 65 contributions. Proficient in Python, SQL, R, and Tableau, with strong experience in statistical modeling and data visualization.
+                Passionate Computer Science undergraduate at Monash University with expertise in AI, data analytics, and cloud technologies. 
+                Skilled in Python, SQL, Tableau, and predictive modelling, with hands-on experience in data analysis and visualisation. 
+                Strong communicator and problem-solver, eager to contribute to impactful projects.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
