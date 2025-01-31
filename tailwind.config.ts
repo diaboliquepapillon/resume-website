@@ -76,7 +76,7 @@ export default {
           "100%": { transform: "scale(1)" },
         },
         "wiggle": {
-          "0%, 100%": { transform: "rotate(-3deg)" },
+          "0%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
         "slide-in": {
