@@ -17,38 +17,43 @@ const projects = [
     github: "https://github.com/yourusername/project1",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     details: "Led a team of 4 to develop and implement machine learning models for predicting energy consumption patterns. Achieved 15% improvement in energy efficiency through data-driven recommendations.",
-    technologies: ["Python", "TensorFlow", "Azure ML", "Power BI"],
-    achievements: ["15% Energy Efficiency Improvement", "Best Innovation Award"]
+    technologies: [
+      "Innovation & Problem-Solving",
+      "Teamwork & Collaboration",
+      "Leadership",
+      "AI & Data-Driven Decision Making"
+    ],
+    achievements: ["AI-driven solutions for sustainability", "Real-world impact through teamwork"]
   },
   {
-    title: "Residential Office Bearer - MSA",
-    description: "Data-driven improvements for 3,000+ residents through comprehensive analysis and recommendations.",
+    title: "Teamwork Virtual Internship (McDermott)",
+    description: "Global collaboration using Python's Scikit-Learn for price optimization forecasts.",
     link: "#",
     github: "https://github.com/yourusername/project2",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    details: "Created comprehensive surveys and analyzed feedback from 3,000+ residents. Implemented changes that led to a 25% increase in resident satisfaction scores.",
-    technologies: ["R", "Tableau", "SQL", "Survey Analysis"],
-    achievements: ["25% Satisfaction Increase", "Recognition Award"]
+    details: "Developed predictive models using Python and Scikit-Learn that achieved 85% accuracy in forecasting price optimizations. Collaborated with team members across 3 different time zones.",
+    technologies: [
+      "Data Analytics & Machine Learning",
+      "Strategic Thinking",
+      "Global Collaboration",
+      "Business & Sustainability Alignment"
+    ],
+    achievements: ["85% Forecast Accuracy", "UN SDGs Alignment"]
   },
   {
-    title: "Teamwork Virtual Internship",
-    description: "Global collaboration using Python's Scikit-Learn for price optimization forecasts.",
+    title: "2024 Top100 Future Leaders",
+    description: "Recognized among Australia's Top 100 Future Leaders for exceptional innovation.",
     link: "#",
     github: "https://github.com/yourusername/project3",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    details: "Developed predictive models using Python and Scikit-Learn that achieved 85% accuracy in forecasting price optimizations. Collaborated with team members across 3 different time zones.",
-    technologies: ["Python", "Scikit-Learn", "Pandas", "Git"],
-    achievements: ["85% Forecast Accuracy", "Best Team Player Award"]
-  },
-  {
-    title: "CommBank Future Leader Award",
-    description: "Recognized among Australia's Top 100 Future Leaders for exceptional innovation.",
-    link: "#",
-    github: "https://github.com/yourusername/project4",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     details: "Selected from over 1,000 applicants nationwide. Led multiple community initiatives that impacted over 5,000 students.",
-    technologies: ["Leadership", "Project Management", "Data Analysis"],
-    achievements: ["Top 100 Future Leaders", "Community Impact Award"]
+    technologies: [
+      "Leadership & Influence",
+      "Innovation & Impact",
+      "Community Engagement",
+      "Recognition & Prestige"
+    ],
+    achievements: ["Top 100 Future Leaders", "CommBank Brighter Communities Award"]
   }
 ];
 
