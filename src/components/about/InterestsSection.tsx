@@ -55,6 +55,7 @@ const InterestsSection = () => {
         <Heart className="w-6 h-6 text-primary" />
         Interests
       </h3>
+      <p className="text-sm text-primary/60 mb-4">Click me!</p>
       <div className="flex flex-wrap gap-4">
         <div 
           className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"

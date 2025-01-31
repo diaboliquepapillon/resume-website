@@ -24,7 +24,7 @@ const education = [
   {
     degree: "Bachelor of Computer Science",
     institution: "Monash University",
-    year: "2021-2024",
+    year: "Feb 2023 - Dec 2025",
     details: [
       "Data Science Major on Full-Scholarship",
       "Ancora Imparo Leadership Program Participant",
@@ -66,14 +66,17 @@ const workExperience = [
       "Contributed to raising $9,950 in 2023, with a 50% recurring gift ratio, 26 recurring gifts out of 52 unique donors",
       "Collaborated with cross-functional teams to present insights from data models, improving decision-making"
     ]
-  },
+  }
+];
+
+const volunteerExperience = [
   {
-    title: "Russian Language Drop-in",
-    company: "Monash Student Association",
-    period: "June 2023 - Oct 2023",
+    title: "Residential Advisor",
+    organization: "Monash Residential Services",
+    period: "June 2023 - Dec 2024",
     description: [
-      "Fostered cultural exchange and language learning by teaching Russian to 20+ students",
-      "Enhanced communication and engagement within the university community"
+      "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students",
+      "Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills"
     ]
   }
 ];
@@ -118,27 +121,6 @@ const impossibleList = {
     "Create an educational platform for developers"
   ]
 };
-
-const volunteerExperience = [
-  {
-    title: "Residential Advisor",
-    organization: "Monash Residential Services",
-    period: "June 2023 - Dec 2024",
-    description: [
-      "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students",
-      "Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills"
-    ]
-  },
-  {
-    title: "Russian Language Drop-in",
-    organization: "Monash Student Association",
-    period: "June 2023 - Oct 2023",
-    description: [
-      "Fostered cultural exchange and language learning by teaching Russian to 20+ students",
-      "Enhanced communication and engagement within the university community"
-    ]
-  }
-];
 
 const About = () => {
   return (
