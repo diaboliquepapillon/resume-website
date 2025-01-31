@@ -6,8 +6,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
-import { Github, ExternalLink, Award, ArrowRight, Trophy } from 'lucide-react';
+import { Github, ExternalLink, Award, ArrowRight, Trophy, X } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
 
 interface ProjectCardProps {
@@ -84,9 +85,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
       </DialogTrigger>
       
-      <DialogContent className="sm:max-w-[700px] bg-white/95 backdrop-blur-sm border-2 border-primary/20">
+      <DialogContent className="sm:max-w-[700px] bg-white/95 backdrop-blur-sm border-2 border-primary/20 w-[95vw] max-h-[90vh] overflow-y-auto relative">
+        <DialogClose className="absolute right-4 top-4 p-2 rounded-full hover:bg-primary/10 transition-colors">
+          <X className="w-6 h-6 text-primary" />
+        </DialogClose>
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-3 text-2xl font-bold text-primary">
+          <DialogTitle className="flex items-center gap-3 text-2xl font-bold text-primary pr-8">
             {project.icon}
             {project.title}
           </DialogTitle>
