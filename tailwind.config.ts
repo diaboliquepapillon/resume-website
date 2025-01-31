@@ -34,6 +34,10 @@ export default {
         "room-spin": "room-spin 20s linear infinite",
         "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "bounce": "bounce 1s infinite",
+        "scale": "scale 0.3s ease-in-out",
+        "wiggle": "wiggle 1s ease-in-out infinite",
+        "slide-in": "slide-in 0.5s ease-out",
+        "rotate-slow": "rotate-slow 15s linear infinite",
       },
       keyframes: {
         "fade-in": {
@@ -65,6 +69,23 @@ export default {
             transform: "none",
             animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
           },
+        },
+        "scale": {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" },
+          "100%": { transform: "scale(1)" },
+        },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        "slide-in": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "rotate-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
       },
     },
