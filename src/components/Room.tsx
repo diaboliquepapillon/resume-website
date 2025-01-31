@@ -1,16 +1,38 @@
 import React from 'react';
-import { LineChart, Line, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { LineChart, Line, ResponsiveContainer, AreaChart, Area, Tooltip, XAxis, YAxis } from 'recharts';
 import { Binary, BrainCircuit, Network, Code, Database, LineChart as LineChartIcon, Sparkles, Stars, Cpu } from 'lucide-react';
 
 const generateData = (length: number) => {
   return Array.from({ length }, (_, i) => ({
-    value: Math.sin(i / 5) * 50 + 50,
-    value2: Math.cos(i / 3) * 30 + 50,
-    value3: Math.sin(i / 4) * 40 + 60
+    name: `Point ${i + 1}`,
+    value: Math.sin(i / 5) * 50 + 50 + Math.random() * 10,
+    value2: Math.cos(i / 3) * 30 + 50 + Math.random() * 8,
+    value3: Math.sin(i / 4) * 40 + 60 + Math.random() * 12
   }));
 };
 
 const data = generateData(30);
+
+const CustomTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white/90 p-3 rounded-lg shadow-lg border border-primary/20 backdrop-blur-sm">
+        {payload.map((entry: any, index: number) => (
+          <div key={index} className="flex items-center gap-2">
+            <div 
+              className="w-3 h-3 rounded-full" 
+              style={{ backgroundColor: entry.color }}
+            />
+            <span className="text-primary/80 font-medium">
+              {Math.round(entry.value)}
+            </span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
 
 const Room = () => {
   return (
@@ -64,7 +86,20 @@ const Room = () => {
                     <stop offset="5%" stopColor="#f1c2dc" stopOpacity={0.4}/>
                     <stop offset="95%" stopColor="#f1c2dc" stopOpacity={0}/>
                   </linearGradient>
+                  <linearGradient id="colorValue3" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#cdd673" stopOpacity={0.4}/>
+                    <stop offset="95%" stopColor="#cdd673" stopOpacity={0}/>
+                  </linearGradient>
                 </defs>
+                <XAxis 
+                  dataKey="name" 
+                  hide={true}
+                />
+                <YAxis hide={true} />
+                <Tooltip 
+                  content={<CustomTooltip />}
+                  cursor={{ stroke: '#26574a', strokeWidth: 1, strokeDasharray: '5 5' }}
+                />
                 <Area 
                   type="monotone" 
                   dataKey="value" 
@@ -82,6 +117,17 @@ const Room = () => {
                   stroke="#f1c2dc" 
                   fillOpacity={1} 
                   fill="url(#colorValue2)" 
+                  strokeWidth={2}
+                  isAnimationActive={true}
+                  animationDuration={1500}
+                  animationEasing="ease-out"
+                />
+                <Area 
+                  type="monotone" 
+                  dataKey="value3" 
+                  stroke="#cdd673" 
+                  fillOpacity={1} 
+                  fill="url(#colorValue3)" 
                   strokeWidth={2}
                   isAnimationActive={true}
                   animationDuration={1500}
