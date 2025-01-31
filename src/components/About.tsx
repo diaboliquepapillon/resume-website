@@ -24,7 +24,12 @@ const education = [
     degree: "Bachelor of Computer Science",
     institution: "Monash University",
     year: "2021-2024",
-    details: "Data Science Major on Full-Scholarship\nAncora Imparo Leadership Program Participant\nWomen in IT mentoring program mentee\nGlobal Immersion Guarantee Participant in Indonesia"
+    details: [
+      "Data Science Major on Full-Scholarship",
+      "Ancora Imparo Leadership Program Participant",
+      "Women in IT mentoring program mentee",
+      "Global Immersion Guarantee Participant in Indonesia"
+    ]
   }
 ];
 
@@ -33,31 +38,51 @@ const workExperience = [
     title: "IBL Intern",
     company: "Transurban",
     period: "Jul 2024 - Dec 2024",
-    description: "Conducted exploratory data analysis (EDA) on large datasets to derive actionable insights and optimise traffic flow. Developed predictive models and conducted EDA to derive insights into customer behaviour and optimise pricing strategies. Utilised SQL and Python for data extraction and analysis, employing tools like Jupyter Notebook for automation and visualisations. Created data-driven reports and dashboards using Tableau to track key performance indicators (KPIs)."
+    description: [
+      "Conducted exploratory data analysis (EDA) on large datasets to derive actionable insights and optimise traffic flow",
+      "Developed predictive models and conducted EDA to derive insights into customer behaviour and optimise pricing strategies",
+      "Utilised SQL and Python for data extraction and analysis, employing tools like Jupyter Notebook for automation and visualisations",
+      "Created data-driven reports and dashboards using Tableau to track key performance indicators (KPIs)"
+    ]
   },
   {
     title: "Faculty of IT Ambassador",
     company: "Monash University",
     period: "Jul 2023 - Present",
-    description: "Represented the Faculty of IT at events, enhancing collaboration and teamwork across diverse cultural settings. Delivered strategic communications to engage students and stakeholders, enhancing the understanding of data science applications."
+    description: [
+      "Represented the Faculty of IT at events, enhancing collaboration and teamwork across diverse cultural settings",
+      "Delivered strategic communications to engage students and stakeholders, enhancing the understanding of data science applications"
+    ]
   },
   {
     title: "Alumni Support Assistant",
     company: "Monash University",
     period: "Jun 2023 - Dec 2024",
-    description: "Fostered strong relationships with alumni and donors, emphasising the transformational impact of their contributions on scholarships and university programs. Utilised data analytics to develop and optimize engagement strategies, resulting in a 62.5% recurring gift ratio and raising $18,275 across 65 contributions in 2024. Contributed to raising $9,950 in 2023, with a 50% recurring gift ratio, 26 recurring gifts out of 52 unique donors. Collaborated with cross-functional teams to present insights from data models, improving decision-making and achieving buy-in from stakeholders."
+    description: [
+      "Fostered strong relationships with alumni and donors, emphasising the transformational impact of their contributions",
+      "Utilised data analytics to develop and optimize engagement strategies, resulting in a 62.5% recurring gift ratio",
+      "Raised $18,275 across 65 contributions in 2024",
+      "Contributed to raising $9,950 in 2023, with a 50% recurring gift ratio, 26 recurring gifts out of 52 unique donors",
+      "Collaborated with cross-functional teams to present insights from data models, improving decision-making"
+    ]
   },
   {
     title: "Residential Advisor",
     company: "Monash Residential Services",
     period: "June 2023 - Dec 2024",
-    description: "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students in their residential community. Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills."
+    description: [
+      "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students",
+      "Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills"
+    ]
   },
   {
     title: "Russian Language Drop-in",
     company: "Monash Student Association",
     period: "June 2023 - Oct 2023",
-    description: "Fostered cultural exchange and language learning by teaching Russian to 20+ students, enhancing communication and engagement within the university community."
+    description: [
+      "Fostered cultural exchange and language learning by teaching Russian to 20+ students",
+      "Enhanced communication and engagement within the university community"
+    ]
   }
 ];
 
