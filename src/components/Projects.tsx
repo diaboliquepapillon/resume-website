@@ -24,7 +24,7 @@ const projects = [
       "AI & Data-Driven Decision Making"
     ],
     achievements: ["AI-driven solutions for sustainability", "Real-world impact through teamwork"],
-    icon: <Briefcase className="w-8 h-8 text-[#8B5CF6]" />
+    icon: <Briefcase className="w-8 h-8 text-primary" />
   },
   {
     title: "Teamwork Virtual Internship (McDermott)",
@@ -40,7 +40,7 @@ const projects = [
       "Business & Sustainability Alignment"
     ],
     achievements: ["85% Forecast Accuracy", "UN SDGs Alignment"],
-    icon: <Globe className="w-8 h-8 text-[#D946EF]" />
+    icon: <Globe className="w-8 h-8 text-accent1" />
   },
   {
     title: "2024 Top100 Future Leaders",
@@ -56,7 +56,7 @@ const projects = [
       "Recognition & Prestige"
     ],
     achievements: ["Top 100 Future Leaders", "CommBank Brighter Communities Award"],
-    icon: <GraduationCap className="w-8 h-8 text-[#F97316]" />
+    icon: <GraduationCap className="w-8 h-8 text-accent2" />
   }
 ];
 
@@ -65,19 +65,19 @@ const Projects = () => {
     <section id="projects" className="min-h-screen py-20 bg-gradient-to-b from-background via-background to-accent1/10 relative overflow-hidden">
       {/* Enhanced background decorative elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8B5CF6]/10 rounded-full filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#D946EF]/10 rounded-full filter blur-3xl animate-pulse" 
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent1/10 rounded-full filter blur-3xl animate-pulse" 
              style={{ animationDelay: '1s' }} />
       </div>
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Rocket className="w-8 h-8 text-[#8B5CF6] animate-bounce" />
-            <h2 className="text-4xl md:text-6xl font-bold animate-slide-up bg-gradient-to-r from-[#8B5CF6] via-[#D946EF] to-[#F97316] bg-clip-text text-transparent">
+            <Rocket className="w-8 h-8 text-primary animate-bounce" />
+            <h2 className="text-4xl md:text-6xl font-bold animate-slide-up bg-gradient-to-r from-primary via-accent1 to-accent2 bg-clip-text text-transparent">
               Projects & Experience
             </h2>
-            <Rocket className="w-8 h-8 text-[#F97316] animate-bounce" style={{ animationDelay: '0.5s' }} />
+            <Rocket className="w-8 h-8 text-accent2 animate-bounce" style={{ animationDelay: '0.5s' }} />
           </div>
           <p className="text-lg md:text-xl text-primary/80 max-w-3xl mx-auto animate-fade-in">
             A showcase of my journey through innovation, leadership, and technical excellence, 
@@ -90,9 +90,9 @@ const Projects = () => {
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <div 
-                  className="group relative overflow-hidden rounded-2xl border-2 border-[#8B5CF6]/20 bg-white/95 backdrop-blur-sm 
-                           hover:border-[#8B5CF6]/40 transition-all duration-500 animate-slide-up
-                           hover:shadow-[0_20px_50px_rgba(139,92,246,0.2)] hover:-translate-y-2 cursor-pointer
+                  className="group relative overflow-hidden rounded-2xl border-2 border-primary/20 bg-white/95 backdrop-blur-sm 
+                           hover:border-primary/40 transition-all duration-500 animate-slide-up
+                           hover:shadow-[0_20px_50px_rgba(38,87,74,0.2)] hover:-translate-y-2 cursor-pointer
                            transform perspective-[1000px] hover:rotate-y-2"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -102,14 +102,14 @@ const Projects = () => {
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#8B5CF6]/80 via-[#D946EF]/50 to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-accent1/50 to-transparent opacity-80" />
                     <div className="absolute top-4 left-4 p-3 bg-white/90 rounded-xl shadow-xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
                       {project.icon}
                     </div>
                   </div>
                   
                   <div className="p-6 space-y-4">
-                    <h3 className="text-2xl font-bold text-primary group-hover:text-[#8B5CF6] transition-colors line-clamp-2">
+                    <h3 className="text-2xl font-bold text-primary group-hover:text-primary transition-colors line-clamp-2">
                       {project.title}
                     </h3>
                     <p className="text-primary/70 text-sm line-clamp-2 group-hover:text-primary/90 transition-colors">
@@ -120,33 +120,33 @@ const Projects = () => {
                       {project.technologies.slice(0, 2).map((tech, i) => (
                         <span 
                           key={i}
-                          className="px-3 py-1 text-xs bg-[#8B5CF6]/10 text-[#8B5CF6] rounded-full
-                                   hover:bg-[#8B5CF6]/20 transition-colors duration-300"
+                          className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full
+                                   hover:bg-primary/20 transition-colors duration-300"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 2 && (
-                        <span className="px-3 py-1 text-xs bg-[#F97316]/10 text-[#F97316] rounded-full">
+                        <span className="px-3 py-1 text-xs bg-accent2/10 text-accent2 rounded-full">
                           +{project.technologies.length - 2} more
                         </span>
                       )}
                     </div>
                     
                     <div className="flex justify-between items-center pt-4">
-                      <span className="flex items-center gap-2 text-sm text-[#D946EF]">
+                      <span className="flex items-center gap-2 text-sm text-accent1">
                         <Trophy className="w-4 h-4" />
                         {project.achievements[0]}
                       </span>
-                      <ArrowRight className="w-5 h-5 text-[#8B5CF6]/40 group-hover:text-[#8B5CF6] transform group-hover:translate-x-2 transition-all" />
+                      <ArrowRight className="w-5 h-5 text-primary/40 group-hover:text-primary transform group-hover:translate-x-2 transition-all" />
                     </div>
                   </div>
                 </div>
               </DialogTrigger>
               
-              <DialogContent className="sm:max-w-[700px] bg-white/95 backdrop-blur-sm border-2 border-[#8B5CF6]/20">
+              <DialogContent className="sm:max-w-[700px] bg-white/95 backdrop-blur-sm border-2 border-primary/20">
                 <DialogHeader>
-                  <DialogTitle className="flex items-center gap-3 text-2xl font-bold text-[#8B5CF6]">
+                  <DialogTitle className="flex items-center gap-3 text-2xl font-bold text-primary">
                     {project.icon}
                     {project.title}
                   </DialogTitle>
@@ -158,13 +158,13 @@ const Projects = () => {
                           alt={project.title}
                           className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#8B5CF6]/50 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" />
                       </div>
                       
                       <p className="text-lg text-primary/80 leading-relaxed">{project.details}</p>
                       
                       <div className="space-y-4">
-                        <h4 className="font-semibold text-[#D946EF] text-lg flex items-center gap-2">
+                        <h4 className="font-semibold text-accent1 text-lg flex items-center gap-2">
                           <Star className="w-5 h-5" />
                           Key Skills & Technologies
                         </h4>
@@ -172,8 +172,8 @@ const Projects = () => {
                           {project.technologies.map((tech, i) => (
                             <span 
                               key={i}
-                              className="px-4 py-2 text-sm bg-[#8B5CF6]/10 text-[#8B5CF6] rounded-full
-                                       hover:bg-[#8B5CF6]/20 transition-colors duration-300 animate-fade-in"
+                              className="px-4 py-2 text-sm bg-primary/10 text-primary rounded-full
+                                       hover:bg-primary/20 transition-colors duration-300 animate-fade-in"
                               style={{ animationDelay: `${i * 0.1}s` }}
                             >
                               {tech}
@@ -183,7 +183,7 @@ const Projects = () => {
                       </div>
                       
                       <div className="space-y-4">
-                        <h4 className="font-semibold text-[#F97316] text-lg flex items-center gap-2">
+                        <h4 className="font-semibold text-accent2 text-lg flex items-center gap-2">
                           <Award className="w-5 h-5" />
                           Achievements
                         </h4>
@@ -191,7 +191,7 @@ const Projects = () => {
                           {project.achievements.map((achievement, i) => (
                             <li key={i} className="flex items-center gap-3 group animate-fade-in"
                                 style={{ animationDelay: `${i * 0.1}s` }}>
-                              <Trophy className="w-5 h-5 text-[#8B5CF6]/60 group-hover:text-[#8B5CF6] transition-colors" />
+                              <Trophy className="w-5 h-5 text-primary/60 group-hover:text-primary transition-colors" />
                               <span className="text-primary/80 group-hover:text-primary transition-colors">{achievement}</span>
                             </li>
                           ))}
@@ -203,8 +203,8 @@ const Projects = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white rounded-xl
-                                   hover:bg-[#7C3AED] transition-all duration-300 hover:scale-105 shadow-lg group"
+                          className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl
+                                   hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg group"
                         >
                           <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                           View Details
@@ -213,8 +213,8 @@ const Projects = () => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-6 py-3 border-2 border-[#8B5CF6] text-[#8B5CF6] rounded-xl
-                                   hover:bg-[#8B5CF6]/10 transition-all duration-300 hover:scale-105 shadow-lg group"
+                          className="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-xl
+                                   hover:bg-primary/10 transition-all duration-300 hover:scale-105 shadow-lg group"
                         >
                           <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                           Live Demo
