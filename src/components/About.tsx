@@ -15,9 +15,14 @@ import InterestsSection from './about/InterestsSection';
 import ImpossibleList from './about/ImpossibleList';
 
 const certifications = [
-  "AWS Certified Solutions Architect",
-  "Google Data Analytics Professional Certificate",
-  "Microsoft Azure Data Fundamentals"
+  "Atlassian Agile Project Management Professional Certificate",
+  "Become a Data Analyst - LinkedIn",
+  "Career Essentials in Data Analysis by Microsoft and LinkedIn",
+  "Career Essentials in Generative AI by Microsoft and LinkedIn",
+  "Negotiation Professional Certificate by American Negotiation Institute",
+  "ServiceNow IT Leadership Professional Certificate",
+  "Social Media Marketing Professional Certificate by Hootsuite",
+  "Dataiku Core Designer"
 ];
 
 const education = [
@@ -267,3 +272,4 @@ const About = () => {
 };
 
 export default About;
+
