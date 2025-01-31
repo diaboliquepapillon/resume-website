@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface CertificationsDialogProps {
   certifications: string[];
@@ -38,32 +39,34 @@ const CertificationsDialog: React.FC<CertificationsDialogProps> = ({ certificati
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-primary">Professional Certifications</DialogTitle>
           <DialogDescription>
-            <div className="mt-6 space-y-6">
-              {certifications.map((cert, index) => (
-                <div 
-                  key={index} 
-                  className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0">
-                      <img 
-                        src={getCertificationLogo(cert)} 
-                        alt={`${cert} logo`}
-                        className="w-12 h-12 object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = 'https://via.placeholder.com/50';
-                        }}
-                      />
-                    </div>
-                    <div className="space-y-2 flex-grow">
-                      <p className="text-lg font-medium text-primary">{cert}</p>
+            <ScrollArea className="h-[60vh] mt-6 pr-4">
+              <div className="space-y-6">
+                {certifications.map((cert, index) => (
+                  <div 
+                    key={index} 
+                    className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0">
+                        <img 
+                          src={getCertificationLogo(cert)} 
+                          alt={`${cert} logo`}
+                          className="w-12 h-12 object-contain"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = 'https://via.placeholder.com/50';
+                          }}
+                        />
+                      </div>
+                      <div className="space-y-2 flex-grow">
+                        <p className="text-lg font-medium text-primary">{cert}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </ScrollArea>
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
