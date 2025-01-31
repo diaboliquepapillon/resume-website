@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Database, ChartBar, Code, Users, Globe, FileText } from 'lucide-react';
+import { Brain, Database, ChartBar, Code, Users, Globe } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -8,12 +8,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
 
 const About = () => {
   const certifications = [
@@ -66,46 +60,16 @@ const About = () => {
     "C++"
   ];
 
-  const impossibleList = {
-    completed: [
-      "Graduate with First Class Honours in Computer Science",
-      "Land first tech internship",
-      "Complete AWS certification",
-      "Present at a tech conference"
-    ],
-    inProgress: [
-      "Build and launch a SaaS product",
-      "Contribute to open source projects",
-      "Learn system design patterns",
-      "Master cloud architecture"
-    ],
-    future: [
-      "Start a tech company",
-      "Mentor 100 aspiring developers",
-      "Write a technical book",
-      "Speak at major tech conferences globally",
-      "Create an educational platform for developers"
-    ]
-  };
-
   return (
     <section id="about" className="min-h-screen flex items-center justify-center py-20">
       <div className="max-w-4xl mx-auto px-4">
-        <Tabs defaultValue="about" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="about">About</TabsTrigger>
-            <TabsTrigger value="impossible-list">Impossible List</TabsTrigger>
-            <TabsTrigger value="resume">Resume</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="about">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">About</h2>
-            <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary animate-slide-up">
-              Motivated Computer Science undergraduate at Monash University with proven expertise in data analytics and community leadership. 
-              Successfully utilized data analytics to optimize engagement strategies, achieving a 62.5% recurring gift ratio and raising over $18,275 
-              across 65 contributions. Proficient in Python, SQL, R, and Tableau, with strong experience in statistical modeling and data visualization.
-            </p>
-            
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">About</h2>
+        <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary animate-slide-up">
+          Motivated Computer Science undergraduate at Monash University with proven expertise in data analytics and community leadership. 
+          Successfully utilized data analytics to optimize engagement strategies, achieving a 62.5% recurring gift ratio and raising over $18,275 
+          across 65 contributions. Proficient in Python, SQL, R, and Tableau, with strong experience in statistical modeling and data visualization.
+        </p>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <Dialog>
             <DialogTrigger asChild>
@@ -184,116 +148,58 @@ const About = () => {
               </DialogHeader>
             </DialogContent>
           </Dialog>
+        </div>
 
-            <div className="mt-8">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Interests</h3>
-              <div className="flex flex-wrap gap-4">
-                <span className="px-4 py-2 bg-accent2 text-primary rounded-full">Traveling</span>
-                <span className="px-4 py-2 bg-accent1 text-primary rounded-full">Soccer</span>
-                <span className="px-4 py-2 bg-accent2 text-primary rounded-full">Movie reviewing</span>
-                <span className="px-4 py-2 bg-accent1 text-primary rounded-full">Baking</span>
-              </div>
+        <div className="mt-8">
+          <h3 className="text-2xl font-bold mb-4 text-primary">Interests</h3>
+          <div className="flex flex-wrap gap-4">
+            <span className="px-4 py-2 bg-accent2 text-primary rounded-full">Traveling</span>
+            <span className="px-4 py-2 bg-accent1 text-primary rounded-full">Soccer</span>
+            <span className="px-4 py-2 bg-accent2 text-primary rounded-full">Movie reviewing</span>
+            <span className="px-4 py-2 bg-accent1 text-primary rounded-full">Baking</span>
+          </div>
+        </div>
+
+        {/* Skills Section with Updated Animations */}
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
+          {/* Soft Skills */}
+          <div className="p-6 border border-primary rounded-lg hover:shadow-xl transition-all duration-300 animate-float">
+            <h3 className="text-2xl font-bold mb-6 text-primary animate-fade-in">Soft Skills</h3>
+            <div className="flex flex-wrap gap-3">
+              {softSkills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-accent1 text-primary rounded-full hover:scale-110 transition-transform duration-300 animate-wiggle"
+                  style={{ 
+                    animationDelay: `${index * 200}ms`,
+                    animationDuration: '2s'
+                  }}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
+          </div>
 
-            {/* Skills Section with Updated Animations */}
-            <div className="mt-16 grid md:grid-cols-2 gap-8">
-              {/* Soft Skills */}
-              <div className="p-6 border border-primary rounded-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-6 text-primary">Soft Skills</h3>
-                <div className="flex flex-wrap gap-3">
-                  {softSkills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-accent1 text-primary rounded-full transition-all duration-300 hover:scale-105 opacity-0 animate-fade-in"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Programming Skills */}
-              <div className="p-6 border border-primary rounded-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-6 text-primary">Programming</h3>
-                <div className="flex flex-wrap gap-3">
-                  {programmingSkills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-accent2 text-primary rounded-full transition-all duration-300 hover:scale-105 opacity-0 animate-fade-in"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+          {/* Programming Skills */}
+          <div className="p-6 border border-primary rounded-lg hover:shadow-xl transition-all duration-300 animate-float">
+            <h3 className="text-2xl font-bold mb-6 text-primary animate-fade-in">Programming</h3>
+            <div className="flex flex-wrap gap-3">
+              {programmingSkills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-accent2 text-primary rounded-full hover:scale-110 transition-transform duration-300 animate-rotate-slow"
+                  style={{ 
+                    animationDelay: `${index * 300}ms`,
+                    animationDuration: '8s'
+                  }}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-          </TabsContent>
-
-          <TabsContent value="impossible-list">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">Impossible List</h2>
-            
-            <div className="space-y-8">
-              <div className="animate-fade-in">
-                <h3 className="text-2xl font-bold mb-4 text-primary">Completed Goals ✅</h3>
-                <div className="space-y-2">
-                  {impossibleList.completed.map((goal, index) => (
-                    <div 
-                      key={index}
-                      className="p-4 bg-accent1 bg-opacity-20 rounded-lg"
-                    >
-                      {goal}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <h3 className="text-2xl font-bold mb-4 text-primary">In Progress 🚀</h3>
-                <div className="space-y-2">
-                  {impossibleList.inProgress.map((goal, index) => (
-                    <div 
-                      key={index}
-                      className="p-4 bg-accent2 bg-opacity-20 rounded-lg"
-                    >
-                      {goal}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
-                <h3 className="text-2xl font-bold mb-4 text-primary">Future Goals 🎯</h3>
-                <div className="space-y-2">
-                  {impossibleList.future.map((goal, index) => (
-                    <div 
-                      key={index}
-                      className="p-4 bg-primary bg-opacity-10 rounded-lg"
-                    >
-                      {goal}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="resume">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">Resume</h2>
-              <p className="text-lg mb-8">Download my latest resume to learn more about my experience and skills.</p>
-              <a 
-                href="/path-to-your-resume.pdf" 
-                download
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all duration-300"
-              >
-                <FileText className="w-5 h-5" />
-                Download Resume
-              </a>
-            </div>
-          </TabsContent>
-        </Tabs>
+          </div>
+        </div>
       </div>
     </section>
   );
