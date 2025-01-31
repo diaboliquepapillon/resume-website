@@ -17,18 +17,18 @@ const Room = () => {
     <div className="relative w-full h-full overflow-hidden rounded-2xl border border-primary/10 bg-gradient-to-br from-white/50 to-transparent backdrop-blur-sm shadow-xl transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-500">
       {/* Enhanced background gradients */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent1/30 rounded-full filter blur-3xl animate-float" 
-             style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent2/30 rounded-full filter blur-3xl animate-float" 
-             style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent1/30 rounded-full filter blur-3xl animate-pulse" 
+             style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent2/30 rounded-full filter blur-3xl animate-pulse" 
+             style={{ animationDuration: '5s' }} />
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/20 rounded-full filter blur-3xl animate-pulse" 
-             style={{ animationDelay: '1.5s' }} />
+             style={{ animationDuration: '6s' }} />
       </div>
 
       {/* Main content container with enhanced 3D effect */}
       <div className="relative z-10 w-full h-full flex items-center justify-center p-8 transform-style-preserve-3d">
         <div className="w-full h-full relative">
-          {/* Floating icons with enhanced animations */}
+          {/* Floating icons with gentle fade animations */}
           {[
             { Icon: BrainCircuit, label: 'AI', position: '-left-4 top-1/4', delay: '0.2s', color: 'accent1' },
             { Icon: Network, label: 'Neural Networks', position: '-right-4 top-1/3', delay: '0.4s', color: 'accent2' },
@@ -39,8 +39,13 @@ const Room = () => {
           ].map(({ Icon, label, position, delay, color }) => (
             <div 
               key={label}
-              className={`absolute ${position} animate-float flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-transform duration-300`}
-              style={{ animationDelay: delay }}
+              className={`absolute ${position} animate-fade-in flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-all duration-300`}
+              style={{ 
+                animationDelay: delay,
+                animationDuration: '0.8s',
+                opacity: 0,
+                animation: 'fade-in 0.8s ease-out forwards'
+              }}
             >
               <Icon className={`w-5 h-5 text-${color}`} />
               <span className="text-sm font-medium text-primary">{label}</span>
