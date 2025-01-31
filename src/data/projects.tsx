@@ -7,7 +7,7 @@ export const projects = [
     description: "Co-developed an AI-driven solution with Microsoft to advance Monash University's net-zero objectives.",
     link: "#",
     github: "https://github.com/yourusername/project1",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "/lovable-uploads/b8f4dcc2-ec6e-456b-8733-10e521f1a90b.png",
     details: "Led a team of 4 to develop and implement machine learning models for predicting energy consumption patterns. Achieved 15% improvement in energy efficiency through data-driven recommendations.",
     technologies: [
       "Innovation & Problem-Solving",
