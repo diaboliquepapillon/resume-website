@@ -1,18 +1,10 @@
 import React from 'react';
 import {
   Tabs,
-  TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { FileText } from 'lucide-react';
-import EducationDialog from './about/EducationDialog';
-import WorkExperienceDialog from './about/WorkExperienceDialog';
-import CertificationsDialog from './about/CertificationsDialog';
-import VolunteerExperienceDialog from './about/VolunteerExperienceDialog';
-import SkillsSection from './about/SkillsSection';
-import InterestsSection from './about/InterestsSection';
-import ImpossibleList from './about/ImpossibleList';
+import AboutTabs from './about/AboutTabs';
 
 const certifications = [
   "Atlassian Agile Project Management Professional Certificate",
@@ -212,59 +204,15 @@ const About = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="about">
-            <div className="space-y-12 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">About Me</h2>
-              <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg animate-fade-in">
-                Passionate Computer Science undergraduate at Monash University with expertise in AI, data analytics, and cloud technologies. 
-                Skilled in Python, SQL, Tableau, and predictive modelling, with hands-on experience in data analysis and visualisation. 
-                Strong communicator and problem-solver, eager to contribute to impactful projects.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <EducationDialog education={education} />
-                <WorkExperienceDialog workExperience={workExperience} />
-                <CertificationsDialog certifications={certifications} />
-                <VolunteerExperienceDialog volunteerExperience={volunteerExperience} />
-              </div>
-
-              <div className="grid grid-cols-1 gap-12">
-                <InterestsSection />
-                <SkillsSection softSkills={softSkills} programmingSkills={programmingSkills} />
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="impossible-list">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">
-              My Impossible List
-            </h2>
-            <p className="text-lg text-primary/80 mb-8 animate-slide-up">
-              This is not just a bucket list. It's a dynamic, ever-evolving list of experiences 
-              that push my boundaries and challenge my limits.
-            </p>
-            
-            <ImpossibleList 
-              completed={impossibleList.completed}
-              inProgress={impossibleList.inProgress}
-              future={impossibleList.future}
-            />
-          </TabsContent>
-
-          <TabsContent value="resume">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary animate-fade-in">Resume</h2>
-              <p className="text-lg mb-8">Download my latest resume to learn more about my experience and skills.</p>
-              <a 
-                href="/path-to-your-resume.pdf" 
-                download
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all duration-300"
-              >
-                <FileText className="w-5 h-5" />
-                Download Resume
-              </a>
-            </div>
-          </TabsContent>
+          <AboutTabs
+            education={education}
+            workExperience={workExperience}
+            certifications={certifications}
+            volunteerExperience={volunteerExperience}
+            softSkills={softSkills}
+            programmingSkills={programmingSkills}
+            impossibleList={impossibleList}
+          />
         </Tabs>
       </div>
     </section>
@@ -272,4 +220,3 @@ const About = () => {
 };
 
 export default About;
-
