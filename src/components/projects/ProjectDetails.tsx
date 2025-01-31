@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Award, Trophy, Github, ExternalLink } from 'lucide-react';
+import { Star, Award, Trophy } from 'lucide-react';
 
 interface ProjectDetailsProps {
   project: {
@@ -60,29 +60,6 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
             </li>
           ))}
         </ul>
-      </div>
-      
-      <div className="flex gap-4 pt-4">
-        <a 
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl
-                   hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg group"
-        >
-          <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-          View Details
-        </a>
-        <a 
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-xl
-                   hover:bg-primary/10 transition-all duration-300 hover:scale-105 shadow-lg group"
-        >
-          <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-          Live Demo
-        </a>
       </div>
     </div>
   );
