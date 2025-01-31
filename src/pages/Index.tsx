@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
-import { Github, Linkedin, Database } from 'lucide-react';
+import { Github, Linkedin, Database, FileText } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -13,33 +13,49 @@ const Index = () => {
       <Projects />
       <Contact />
       
-      {/* Social Links Footer */}
-      <footer className="w-full py-8 bg-background">
-        <div className="max-w-4xl mx-auto flex justify-center gap-8 items-center">
-          <a 
-            href="https://github.com/yourusername" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-primary hover:text-accent1 transition-colors duration-300"
-          >
-            <Github className="w-8 h-8" />
-          </a>
-          <a 
-            href="https://linkedin.com/in/yourusername" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-primary hover:text-accent2 transition-colors duration-300"
-          >
-            <Linkedin className="w-8 h-8" />
-          </a>
-          <a 
-            href="https://kaggle.com/yourusername" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-primary hover:text-accent1 transition-colors duration-300"
-          >
-            <Database className="w-8 h-8" />
-          </a>
+      {/* Enhanced Social Links Footer */}
+      <footer className="w-full py-12 bg-background">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-primary mb-8 text-center">Connect With Me</h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            <a 
+              href="https://linkedin.com/in/yourusername" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-[#0077B5] text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+            >
+              <Linkedin className="w-6 h-6" />
+              <span>LinkedIn</span>
+            </a>
+            <a 
+              href="https://github.com/yourusername" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-[#333] text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+            >
+              <Github className="w-6 h-6" />
+              <span>GitHub</span>
+            </a>
+            <a 
+              href="https://kaggle.com/yourusername" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-[#20BEFF] text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+            >
+              <Database className="w-6 h-6" />
+              <span>Kaggle</span>
+            </a>
+            <a 
+              href="/certificates" 
+              className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+            >
+              <FileText className="w-6 h-6" />
+              <span>Certificates</span>
+            </a>
+          </div>
+          <div className="mt-8 text-center text-sm text-primary opacity-75">
+            © {new Date().getFullYear()} Your Name. All rights reserved.
+          </div>
         </div>
       </footer>
     </main>
