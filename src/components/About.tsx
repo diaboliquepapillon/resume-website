@@ -101,64 +101,70 @@ const programmingSkills = [
 ];
 
 const impossibleList = {
-  completed: [
-    // Education & Skills
-    "Enrolled in Computer Science at Monash University",
-    "Gained proficiency in Python, SQL, R, and Tableau",
-    "Completed coursework/projects in data analytics and AI",
-    "Built strong problem-solving and coding skills",
-    // Work & Experience
-    "Landed first tech internship",
-    "Completed AWS certification",
-    "Developed a portfolio with case studies & projects",
-    "Improved communication and teamwork skills",
-    // Personal Growth
-    "Built a habit of continuous learning & upskilling",
-    "Started networking and engaging in professional communities",
-    "Developed a strong work ethic and discipline",
-    // Travel
-    "🇦🇪 UAE – Explored the skyline of Dubai and culture of Abu Dhabi",
-    "🇮🇩 Indonesia – Experienced Bali's nature and Jakarta's city life"
-  ],
-  inProgress: [
-    // Education & Learning
-    "Enhancing expertise in machine learning & deep learning",
-    "Exploring cloud computing (AWS, GCP, or Azure)",
-    "Learning system design patterns",
-    // Work & Career
-    "Building and launching a SaaS product",
-    "Contributing to open-source projects",
-    "Expanding professional network on LinkedIn & GitHub",
-    // Personal Development
-    "Improving time management & productivity skills",
-    "Enhancing public speaking & leadership abilities",
-    "Developing a personal brand or blog on tech & AI",
-    // Travel
-    "🇺🇸 USA – Exploring Silicon Valley, NYC, and major landmarks",
-    "🇯🇵 Japan – Immersing in Tokyo's tech scene and Kyoto's history",
-    "🇻🇳 Vietnam – Experiencing Vietnamese food, landscapes, and history"
-  ],
-  future: [
-    // Short-Term (1-5 Years)
-    "Land a full-time role in AI, data analytics, or machine learning",
-    "Speak at conferences or events on data & AI",
-    "Earn a Master's degree or specialized certification in AI",
-    // Mid-Term (5-10 Years)
-    "Become a Senior Data Scientist / AI Engineer",
-    "Launch a tech startup or consulting business",
-    "Publish research or case studies in the AI space",
-    "Mentor 100 aspiring developers",
-    // Long-Term (10-20 Years)
-    "Hold a leadership role (CTO, AI Director, or Head of Data Science)",
-    "Build AI-driven solutions for global impact",
-    "Write a technical book",
-    "Speak at major tech conferences globally",
-    "Create an educational platform for developers",
-    "Achieve financial independence & work-life balance",
-    // Future Travel Goals
-    "🌎 South America – Visit Brazil, Argentina, Peru and explore Machu Picchu, Rio Carnival, and Patagonia",
-    "🇲🇦 Morocco – Discover the Sahara Desert, Marrakech, and North African culture"
-  ]
+  completed: {
+    education: [
+      "Enrolled in Computer Science at Monash University",
+      "Gained proficiency in Python, SQL, R, and Tableau",
+      "Completed coursework/projects in data analytics and AI",
+      "Built strong problem-solving and coding skills"
+    ],
+    professional: [
+      "Landed first tech internship",
+      "Completed AWS certification",
+      "Developed a portfolio with case studies & projects",
+      "Improved communication and teamwork skills",
+      "Built a habit of continuous learning & upskilling",
+      "Started networking and engaging in professional communities",
+      "Developed a strong work ethic and discipline"
+    ],
+    travel: [
+      "🇦🇪 UAE – Explored the skyline of Dubai and culture of Abu Dhabi",
+      "🇮🇩 Indonesia – Experienced Bali's nature and Jakarta's city life"
+    ]
+  },
+  inProgress: {
+    education: [
+      "Enhancing expertise in machine learning & deep learning",
+      "Exploring cloud computing (AWS, GCP, or Azure)",
+      "Learning system design patterns"
+    ],
+    professional: [
+      "Building and launching a SaaS product",
+      "Contributing to open-source projects",
+      "Expanding professional network on LinkedIn & GitHub",
+      "Improving time management & productivity skills",
+      "Enhancing public speaking & leadership abilities",
+      "Developing a personal brand or blog on tech & AI"
+    ],
+    travel: [
+      "🇺🇸 USA – Exploring Silicon Valley, NYC, and major landmarks",
+      "🇯🇵 Japan – Immersing in Tokyo's tech scene and Kyoto's history",
+      "🇻🇳 Vietnam – Experiencing Vietnamese food, landscapes, and history"
+    ]
+  },
+  future: {
+    education: [
+      "Earn a Master's degree or specialized certification in AI"
+    ],
+    professional: [
+      "Land a full-time role in AI, data analytics, or machine learning",
+      "Speak at conferences or events on data & AI",
+      "Become a Senior Data Scientist / AI Engineer",
+      "Launch a tech startup or consulting business",
+      "Publish research or case studies in the AI space",
+      "Mentor 100 aspiring developers",
+      "Hold a leadership role (CTO, AI Director, or Head of Data Science)",
+      "Build AI-driven solutions for global impact",
+      "Write a technical book",
+      "Speak at major tech conferences globally",
+      "Create an educational platform for developers",
+      "Achieve financial independence & work-life balance"
+    ],
+    travel: [
+      "🌎 South America – Visit Brazil, Argentina, Peru and explore Machu Picchu, Rio Carnival, and Patagonia",
+      "🇲🇦 Morocco – Discover the Sahara Desert, Marrakech, and North African culture"
+    ]
+  }
 };
 
 const About = () => {
