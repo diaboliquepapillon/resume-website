@@ -68,7 +68,7 @@ const ResumeTab = () => {
           Download my complete resume to learn more about my experience and qualifications.
         </p>
         <a
-          href="https://drive.google.com/file/d/1Hs-Hy5Fy_CtXkf_Yc-cL_FSzGOj_PMVZ/view?usp=sharing"
+          href="https://drive.google.com/file/d/1zrA--C9na8dM5oye2hR1JxIE-GL-0Hoh/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg text-sm md:text-base"
