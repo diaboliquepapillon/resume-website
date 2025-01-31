@@ -72,7 +72,7 @@ const Room = () => {
                   isAnimationActive={true}
                   animationBegin={0}
                   animationDuration={2000}
-                  animationEasing="ease-out-cubic"
+                  animationEasing="ease"
                 />
                 <Area 
                   type="monotone" 
@@ -84,7 +84,7 @@ const Room = () => {
                   isAnimationActive={true}
                   animationBegin={500}
                   animationDuration={2000}
-                  animationEasing="ease-out-cubic"
+                  animationEasing="ease"
                 />
               </AreaChart>
             </ResponsiveContainer>
