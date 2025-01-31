@@ -28,7 +28,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <a 
-              href="mailto:your.email@example.com" 
+              href="mailto:vahabovaylin@gmail.com" 
               className="group block p-6 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-primary/10 hover:border-primary/30"
             >
               <div className="flex items-center gap-4">
@@ -38,7 +38,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-primary text-lg mb-1">Email Me</h3>
                   <p className="text-primary/70 group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
-                    your.email@example.com
+                    vahabovaylin@gmail.com
                     <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </p>
                 </div>
