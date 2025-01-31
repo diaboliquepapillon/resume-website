@@ -18,7 +18,7 @@ const getCertificationLogo = (cert: string): string => {
   if (cert.includes('Atlassian')) return 'https://cdn.worldvectorlogo.com/logos/atlassian-1.svg';
   if (cert.includes('LinkedIn')) return 'https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg';
   if (cert.includes('Microsoft')) return 'https://cdn.worldvectorlogo.com/logos/microsoft-5.svg';
-  if (cert.includes('ServiceNow')) return 'https://cdn.worldvectorlogo.com/logos/servicenow-2.svg';
+  if (cert.includes('ServiceNow')) return '/lovable-uploads/c7e957e9-0bb3-4639-8049-8cce2b133a6d.png';
   if (cert.includes('Hootsuite')) return 'https://cdn.worldvectorlogo.com/logos/hootsuite-1.svg';
   if (cert.includes('Dataiku')) return '/lovable-uploads/742741e3-b74c-4d42-a952-ebd21a1930b2.png';
   if (cert.includes('Negotiation')) return 'https://americannegotiationinstitute.com/wp-content/uploads/2021/03/ANI-Logo.png';
