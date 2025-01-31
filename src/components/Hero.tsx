@@ -57,12 +57,13 @@ const Hero = () => {
 
             <div className="space-y-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <h2 className="text-2xl lg:text-3xl text-primary/90 font-semibold">
-                Data Scientist & Machine Learning Engineer
+                Data Scientist
               </h2>
               <p className="text-lg text-primary/80 max-w-2xl leading-relaxed backdrop-blur-sm bg-white/30 p-6 rounded-xl border border-primary/10 shadow-lg">
-                Transforming complex data into actionable insights. Specializing in machine learning, 
-                data analytics, and AI-driven solutions. Passionate about leveraging technology to solve 
-                real-world problems.
+                Passionate about transforming complex data into actionable insights. 
+                Specializing in data analytics and visualization, with expertise in Python, 
+                SQL, and statistical analysis. Committed to driving data-informed decisions 
+                and uncovering meaningful patterns in data.
               </p>
             </div>
 
