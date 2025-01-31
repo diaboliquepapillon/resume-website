@@ -13,7 +13,7 @@ interface WorkExperience {
   title: string;
   company: string;
   period: string;
-  description: string;
+  description: string[];
 }
 
 interface WorkExperienceDialogProps {
@@ -30,7 +30,7 @@ const WorkExperienceDialog: React.FC<WorkExperienceDialogProps> = ({ workExperie
           <p className="text-primary/80">Click to view work history</p>
         </div>
       </DialogTrigger>
-      <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
+      <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw] max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-primary">Professional Experience</DialogTitle>
           <DialogDescription>
@@ -49,7 +49,11 @@ const WorkExperienceDialog: React.FC<WorkExperienceDialogProps> = ({ workExperie
                       <h4 className="font-bold text-xl text-primary">{work.title}</h4>
                       <p className="text-primary/90 font-medium">{work.company}</p>
                       <p className="text-primary/80">{work.period}</p>
-                      <p className="text-primary mt-2 leading-relaxed">{work.description}</p>
+                      <ul className="list-disc pl-4 space-y-1">
+                        {work.description.map((desc, idx) => (
+                          <li key={idx} className="text-primary">{desc}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>

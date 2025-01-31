@@ -13,7 +13,7 @@ interface Education {
   degree: string;
   institution: string;
   year: string;
-  details: string;
+  details: string[];
 }
 
 interface EducationDialogProps {
@@ -49,7 +49,11 @@ const EducationDialog: React.FC<EducationDialogProps> = ({ education }) => {
                       <h4 className="font-bold text-xl text-primary">{edu.degree}</h4>
                       <p className="text-primary/90 font-medium">{edu.institution}</p>
                       <p className="text-primary/80">{edu.year}</p>
-                      <p className="text-primary mt-2 leading-relaxed">{edu.details}</p>
+                      <ul className="list-disc pl-4 space-y-1">
+                        {edu.details.map((detail, idx) => (
+                          <li key={idx} className="text-primary">{detail}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>

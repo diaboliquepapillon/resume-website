@@ -67,15 +67,6 @@ const workExperience = [
     ]
   },
   {
-    title: "Residential Advisor",
-    company: "Monash Residential Services",
-    period: "June 2023 - Dec 2024",
-    description: [
-      "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students",
-      "Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills"
-    ]
-  },
-  {
     title: "Russian Language Drop-in",
     company: "Monash Student Association",
     period: "June 2023 - Oct 2023",
@@ -127,6 +118,27 @@ const impossibleList = {
   ]
 };
 
+const volunteerExperience = [
+  {
+    title: "Residential Advisor",
+    organization: "Monash Residential Services",
+    period: "June 2023 - Dec 2024",
+    description: [
+      "Serving as a Residential Advisor within Monash Residential Services, providing guidance and support to students",
+      "Spearheaded initiatives that improved residential standards, showcasing leadership and problem-solving skills"
+    ]
+  },
+  {
+    title: "Russian Language Drop-in",
+    organization: "Monash Student Association",
+    period: "June 2023 - Oct 2023",
+    description: [
+      "Fostered cultural exchange and language learning by teaching Russian to 20+ students",
+      "Enhanced communication and engagement within the university community"
+    ]
+  }
+];
+
 const About = () => {
   return (
     <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-b from-background via-background to-background relative overflow-hidden">
@@ -170,6 +182,26 @@ const About = () => {
                 <EducationDialog education={education} />
                 <WorkExperienceDialog workExperience={workExperience} />
                 <CertificationsDialog certifications={certifications} />
+              </div>
+
+              <div className="space-y-8">
+                <div className="bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg">
+                  <h3 className="text-2xl font-bold mb-6 text-primary">Volunteer Experience</h3>
+                  <div className="space-y-6">
+                    {volunteerExperience.map((volunteer, index) => (
+                      <div key={index} className="p-4 bg-accent1/10 rounded-lg">
+                        <h4 className="font-bold text-lg text-primary">{volunteer.title}</h4>
+                        <p className="text-primary/90">{volunteer.organization}</p>
+                        <p className="text-primary/80 text-sm mb-2">{volunteer.period}</p>
+                        <ul className="list-disc pl-4 space-y-1">
+                          {volunteer.description.map((desc, idx) => (
+                            <li key={idx} className="text-primary/90">{desc}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <InterestsSection />
