@@ -19,10 +19,10 @@ export default {
     },
     extend: {
       colors: {
-        background: "#F1F0FB", // Soft gray background
-        primary: "#304352", // Dark blue-gray for text
-        accent1: "#E5DEFF", // Soft purple
-        accent2: "#F2FCE2", // Soft green
+        background: "#e8efed",
+        primary: "#26574a",
+        accent1: "#f1c2dc",
+        accent2: "#cdd673",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
