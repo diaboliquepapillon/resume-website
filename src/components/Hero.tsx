@@ -21,7 +21,7 @@ const Hero = () => {
               </h1>
               <div className="flex gap-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/diaboliquepapillon" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-all duration-300 hover:scale-110 transform"
@@ -29,7 +29,7 @@ const Hero = () => {
                   <Github className="w-7 h-7" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="https://linkedin.com/in/aylinvahabova" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-all duration-300 hover:scale-110 transform"
@@ -37,7 +37,7 @@ const Hero = () => {
                   <Linkedin className="w-7 h-7" />
                 </a>
                 <a 
-                  href="https://kaggle.com/yourusername" 
+                  href="https://kaggle.com/aylinchik" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-all duration-300 hover:scale-110 transform"
@@ -45,7 +45,7 @@ const Hero = () => {
                   <Database className="w-7 h-7" />
                 </a>
                 <a 
-                  href="/resume.pdf" 
+                  href="https://drive.google.com/drive/folders/1r58UaN21Io3vhiS7Dk0Lp1_GD92UnGbP?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-all duration-300 hover:scale-110 transform"

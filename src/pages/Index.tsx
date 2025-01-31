@@ -19,7 +19,7 @@ const Index = () => {
           <h2 className="text-2xl font-bold text-primary mb-8 text-center">Connect With Me</h2>
           <div className="flex flex-wrap justify-center gap-6">
             <a 
-              href="https://linkedin.com/in/yourusername" 
+              href="https://linkedin.com/in/aylinvahabova" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-[#0077B5] text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
@@ -28,7 +28,7 @@ const Index = () => {
               <span>LinkedIn</span>
             </a>
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/diaboliquepapillon" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-[#333] text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
@@ -37,7 +37,7 @@ const Index = () => {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://kaggle.com/yourusername" 
+              href="https://kaggle.com/aylinchik" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-[#20BEFF] text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
@@ -46,7 +46,7 @@ const Index = () => {
               <span>Kaggle</span>
             </a>
             <a 
-              href="/certificates" 
+              href="https://drive.google.com/drive/folders/1r58UaN21Io3vhiS7Dk0Lp1_GD92UnGbP?usp=sharing" 
               className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
             >
               <FileText className="w-6 h-6" />
@@ -54,7 +54,7 @@ const Index = () => {
             </a>
           </div>
           <div className="mt-8 text-center text-sm text-primary opacity-75">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Aylin Vahabova. All rights reserved.
           </div>
         </div>
       </footer>
