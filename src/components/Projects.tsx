@@ -4,22 +4,26 @@ const projects = [
   {
     title: "Monash Innovation Guarantee - Microsoft",
     description: "Co-developed an AI-driven solution with Microsoft to advance Monash University's net-zero objectives. Developed innovation, leadership, and teamwork skills addressing real-world challenges.",
-    link: "#"
+    link: "#",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
     title: "Residential Office Bearer - MSA",
     description: "Represented over 3,000 residents, conducting detailed data analysis on residential conditions and providing actionable recommendations that enhanced living standards.",
-    link: "#"
+    link: "#",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
   },
   {
     title: "Teamwork Virtual Internship",
     description: "Collaborated globally to analyze McDermott's tools using Python's Scikit-Learn library, achieving 85% accuracy in price optimization forecasts.",
-    link: "#"
+    link: "#",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
   },
   {
     title: "CommBank Future Leader Award",
     description: "Recognized as one of Australia's Top 100 Future Leaders for exceptional leadership and innovation in community-driven initiatives.",
-    link: "#"
+    link: "#",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   }
 ];
 
@@ -32,12 +36,22 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="p-6 border border-primary hover:bg-accent1 hover:text-primary transition-colors duration-300 animate-slide-up"
+              className="group relative overflow-hidden border border-primary hover:bg-accent1 hover:text-primary transition-colors duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-              <p className="mb-4">{project.description}</p>
-              <a href={project.link} className="underline">Learn More</a>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary bg-opacity-30 group-hover:bg-opacity-0 transition-opacity duration-300" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                <p className="mb-4">{project.description}</p>
+                <a href={project.link} className="underline">Learn More</a>
+              </div>
             </div>
           ))}
         </div>

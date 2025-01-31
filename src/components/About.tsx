@@ -1,7 +1,45 @@
 import React from 'react';
 import { Brain, Database, ChartBar, Code, Users, Globe } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const About = () => {
+  const certifications = [
+    "AWS Certified Solutions Architect",
+    "Google Data Analytics Professional Certificate",
+    "Microsoft Azure Data Fundamentals"
+  ];
+
+  const education = [
+    {
+      degree: "Bachelor of Computer Science",
+      institution: "Monash University",
+      year: "2021-2024",
+      details: "Major in Data Science"
+    }
+  ];
+
+  const workExperience = [
+    {
+      title: "Data Science Intern",
+      company: "Transurban",
+      period: "2023",
+      description: "Analyzed traffic patterns and developed predictive models"
+    },
+    {
+      title: "Faculty IT Ambassador",
+      company: "Monash University",
+      period: "2022-2023",
+      description: "Provided technical support and conducted workshops"
+    }
+  ];
+
   return (
     <section id="about" className="min-h-screen flex items-center justify-center py-20">
       <div className="max-w-4xl mx-auto px-4 animate-slide-up">
@@ -13,23 +51,83 @@ const About = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="p-6 border border-primary hover:bg-accent1 hover:text-primary transition-colors duration-300">
-            <Brain className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Data Analysis</h3>
-            <p>Advanced analytics and predictive modeling with Python and R</p>
-          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="p-6 border border-primary hover:bg-accent1 hover:text-primary transition-colors duration-300 cursor-pointer">
+                <Brain className="w-8 h-8 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Education</h3>
+                <p>Click to view educational background</p>
+              </div>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Education</DialogTitle>
+                <DialogDescription>
+                  <div className="mt-4">
+                    {education.map((edu, index) => (
+                      <div key={index} className="mb-4 p-4 border border-primary rounded">
+                        <h4 className="font-bold">{edu.degree}</h4>
+                        <p>{edu.institution}</p>
+                        <p>{edu.year}</p>
+                        <p>{edu.details}</p>
+                      </div>
+                    ))}
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
           
-          <div className="p-6 border border-primary hover:bg-accent2 hover:text-primary transition-colors duration-300">
-            <Code className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Programming</h3>
-            <p>Python, SQL, R, Tableau, Jupyter, Statistical Modeling</p>
-          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="p-6 border border-primary hover:bg-accent2 hover:text-primary transition-colors duration-300 cursor-pointer">
+                <Code className="w-8 h-8 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Work Experience</h3>
+                <p>Click to view work history</p>
+              </div>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Work Experience</DialogTitle>
+                <DialogDescription>
+                  <div className="mt-4">
+                    {workExperience.map((work, index) => (
+                      <div key={index} className="mb-4 p-4 border border-primary rounded">
+                        <h4 className="font-bold">{work.title}</h4>
+                        <p>{work.company}</p>
+                        <p>{work.period}</p>
+                        <p>{work.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
           
-          <div className="p-6 border border-primary hover:bg-accent1 hover:text-primary transition-colors duration-300">
-            <Users className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-bold mb-2">Leadership</h3>
-            <p>Team collaboration, community engagement, and project management</p>
-          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="p-6 border border-primary hover:bg-accent1 hover:text-primary transition-colors duration-300 cursor-pointer">
+                <Users className="w-8 h-8 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Certifications</h3>
+                <p>Click to view certifications</p>
+              </div>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Certifications</DialogTitle>
+                <DialogDescription>
+                  <div className="mt-4">
+                    {certifications.map((cert, index) => (
+                      <div key={index} className="mb-2 p-2 border border-primary rounded">
+                        {cert}
+                      </div>
+                    ))}
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
 
         <div className="mt-8">
