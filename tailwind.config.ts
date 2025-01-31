@@ -18,6 +18,12 @@ export default {
       },
     },
     extend: {
+      colors: {
+        background: "#e8efed",
+        primary: "#26574a",
+        accent1: "#f1c2dc",
+        accent2: "#cdd673",
+      },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
