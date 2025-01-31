@@ -25,7 +25,7 @@ const ResumeTab = () => {
           <div className="flex justify-center gap-6 text-primary/80">
             <span className="flex items-center gap-1">
               <Mail className="w-4 h-4" />
-              aylin.vahabova@monash.edu
+              vahabovaylin@gmail.com
             </span>
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
