@@ -39,7 +39,7 @@ export const projects = [
     description: "Recognized among Australia's Top 100 Future Leaders for exceptional innovation.",
     link: "#",
     github: "https://github.com/yourusername/project3",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "/lovable-uploads/2c23cd09-b1f9-4ca9-8542-04af93aa423c.png",
     details: "Selected from over 1,000 applicants nationwide. Led multiple community initiatives that impacted over 5,000 students.",
     technologies: [
       "Leadership & Influence",
