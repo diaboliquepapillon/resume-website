@@ -9,10 +9,9 @@ const data = [
 
 const Room = () => {
   return (
-    <div className="relative w-full h-[500px] perspective-[1000px]">
+    <div className="relative w-full h-[700px] perspective-[1000px]">
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-64 h-64 relative transform-style-preserve-3d animate-room-spin">
-          {/* Front wall - Neural Network Visualization */}
+        <div className="w-96 h-96 relative transform-style-preserve-3d animate-room-spin">
           <div className="absolute w-full h-full bg-accent1/10 border-2 border-primary transform translate-z-[128px] overflow-hidden">
             <div className="grid grid-cols-3 gap-2 p-4">
               {[...Array(9)].map((_, i) => (
