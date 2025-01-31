@@ -1,20 +1,17 @@
 import React from 'react';
-import { Brain, Code, Users, FileText, GraduationCap, Briefcase, Award, Heart } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import Skills from './Skills';
+import { FileText } from 'lucide-react';
+import EducationDialog from './about/EducationDialog';
+import WorkExperienceDialog from './about/WorkExperienceDialog';
+import CertificationsDialog from './about/CertificationsDialog';
+import SkillsSection from './about/SkillsSection';
+import InterestsSection from './about/InterestsSection';
+import ImpossibleList from './about/ImpossibleList';
 
 const certifications = [
   "AWS Certified Solutions Architect",
@@ -128,234 +125,13 @@ const About = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="p-8 rounded-xl bg-white shadow-lg border border-primary/20 hover:bg-accent1/20 transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
-                      <GraduationCap className="w-8 h-8 mb-4 group-hover:animate-bounce text-primary" />
-                      <h3 className="text-xl font-bold mb-2 text-primary">Education</h3>
-                      <p className="text-primary/80">Click to view educational background</p>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
-                    <DialogHeader>
-                      <DialogTitle className="text-3xl font-bold text-primary">Education Journey</DialogTitle>
-                      <DialogDescription>
-                        <div className="mt-6 space-y-6">
-                          {education.map((edu, index) => (
-                            <div 
-                              key={index} 
-                              className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                              style={{ animationDelay: `${index * 100}ms` }}
-                            >
-                              <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
-                                  <GraduationCap className="w-6 h-6" />
-                                </div>
-                                <div className="space-y-2">
-                                  <h4 className="font-bold text-xl text-primary">{edu.degree}</h4>
-                                  <p className="text-primary/90 font-medium">{edu.institution}</p>
-                                  <p className="text-primary/80">{edu.year}</p>
-                                  <p className="text-primary mt-2 leading-relaxed">{edu.details}</p>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
-                
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="p-8 rounded-xl bg-white shadow-lg border border-primary/20 hover:bg-accent2/20 transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
-                      <Briefcase className="w-8 h-8 mb-4 group-hover:animate-bounce text-primary" />
-                      <h3 className="text-xl font-bold mb-2 text-primary">Work Experience</h3>
-                      <p className="text-primary/80">Click to view work history</p>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
-                    <DialogHeader>
-                      <DialogTitle className="text-3xl font-bold text-primary">Professional Experience</DialogTitle>
-                      <DialogDescription>
-                        <div className="mt-6 space-y-6">
-                          {workExperience.map((work, index) => (
-                            <div 
-                              key={index} 
-                              className="p-6 bg-accent2/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                              style={{ animationDelay: `${index * 100}ms` }}
-                            >
-                              <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
-                                  <Briefcase className="w-6 h-6" />
-                                </div>
-                                <div className="space-y-2">
-                                  <h4 className="font-bold text-xl text-primary">{work.title}</h4>
-                                  <p className="text-primary/90 font-medium">{work.company}</p>
-                                  <p className="text-primary/80">{work.period}</p>
-                                  <p className="text-primary mt-2 leading-relaxed">{work.description}</p>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
-                
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="p-8 rounded-xl bg-white shadow-lg border border-primary/20 hover:bg-accent1/20 transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
-                      <Award className="w-8 h-8 mb-4 group-hover:animate-bounce text-primary" />
-                      <h3 className="text-xl font-bold mb-2 text-primary">Certifications</h3>
-                      <p className="text-primary/80">Click to view certifications</p>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
-                    <DialogHeader>
-                      <DialogTitle className="text-3xl font-bold text-primary">Professional Certifications</DialogTitle>
-                      <DialogDescription>
-                        <div className="mt-6 space-y-6">
-                          {certifications.map((cert, index) => (
-                            <div 
-                              key={index} 
-                              className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                              style={{ animationDelay: `${index * 100}ms` }}
-                            >
-                              <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
-                                  <Award className="w-6 h-6" />
-                                </div>
-                                <div className="space-y-2">
-                                  <p className="text-lg font-medium text-primary">{cert}</p>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
+                <EducationDialog education={education} />
+                <WorkExperienceDialog workExperience={workExperience} />
+                <CertificationsDialog certifications={certifications} />
               </div>
 
-              <div className="mt-8 bg-white p-8 rounded-xl border-2 border-primary/20 shadow-lg animate-fade-in hover:border-primary/40 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-                  <Heart className="w-6 h-6 text-primary" />
-                  Interests
-                </h3>
-                <div className="flex flex-wrap gap-4">
-                  <div 
-                    className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
-                    onClick={() => {
-                      const emojis = ["✈️", "🌎", "🧳", "🗺️"];
-                      emojis.forEach((emoji, index) => {
-                        const span = document.createElement("span");
-                        span.innerText = emoji;
-                        span.className = "absolute animate-float pointer-events-none";
-                        span.style.left = `${Math.random() * 100}%`;
-                        span.style.animationDelay = `${index * 0.2}s`;
-                        document.body.appendChild(span);
-                        setTimeout(() => span.remove(), 3000);
-                      });
-                    }}
-                  >
-                    Traveling
-                  </div>
-                  <div 
-                    className="group relative px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
-                    onClick={() => {
-                      const emojis = ["⚽", "🥅", "🏃‍♂️", "🎯"];
-                      emojis.forEach((emoji, index) => {
-                        const span = document.createElement("span");
-                        span.innerText = emoji;
-                        span.className = "absolute animate-float pointer-events-none";
-                        span.style.left = `${Math.random() * 100}%`;
-                        span.style.animationDelay = `${index * 0.2}s`;
-                        document.body.appendChild(span);
-                        setTimeout(() => span.remove(), 3000);
-                      });
-                    }}
-                  >
-                    Soccer
-                  </div>
-                  <div 
-                    className="group relative px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
-                    onClick={() => {
-                      const emojis = ["🎬", "🍿", "📽️", "⭐"];
-                      emojis.forEach((emoji, index) => {
-                        const span = document.createElement("span");
-                        span.innerText = emoji;
-                        span.className = "absolute animate-float pointer-events-none";
-                        span.style.left = `${Math.random() * 100}%`;
-                        span.style.animationDelay = `${index * 0.2}s`;
-                        document.body.appendChild(span);
-                        setTimeout(() => span.remove(), 3000);
-                      });
-                    }}
-                  >
-                    Movie reviewing
-                  </div>
-                  <div 
-                    className="group relative px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md cursor-pointer"
-                    onClick={() => {
-                      const emojis = ["🧁", "🥖", "🎂", "👨‍🍳"];
-                      emojis.forEach((emoji, index) => {
-                        const span = document.createElement("span");
-                        span.innerText = emoji;
-                        span.className = "absolute animate-float pointer-events-none";
-                        span.style.left = `${Math.random() * 100}%`;
-                        span.style.animationDelay = `${index * 0.2}s`;
-                        document.body.appendChild(span);
-                        setTimeout(() => span.remove(), 3000);
-                      });
-                    }}
-                  >
-                    Baking
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-16 grid md:grid-cols-2 gap-8">
-                {/* Soft Skills */}
-                <div className="p-8 rounded-xl bg-white border-2 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 group">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Brain className="w-6 h-6 text-primary group-hover:animate-bounce" />
-                    <h3 className="text-2xl font-bold text-primary">Soft Skills</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {softSkills.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="px-4 py-2 bg-accent1 text-primary font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-md animate-fade-in"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Programming Skills */}
-                <div className="p-8 rounded-xl bg-white border-2 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 group">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Code className="w-6 h-6 text-primary group-hover:animate-bounce" />
-                    <h3 className="text-2xl font-bold text-primary">Programming</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {programmingSkills.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="px-4 py-2 bg-accent2 text-primary font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-md animate-fade-in"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <InterestsSection />
+              <SkillsSection softSkills={softSkills} programmingSkills={programmingSkills} />
             </div>
           </TabsContent>
 
@@ -368,67 +144,11 @@ const About = () => {
               that push my boundaries and challenge my limits.
             </p>
             
-            <div className="space-y-12">
-              <div className="animate-fade-in backdrop-blur-sm bg-white/30 rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-                  <span className="text-3xl">✅</span> Completed Goals
-                </h3>
-                <div className="grid gap-4">
-                  {impossibleList.completed.map((goal, index) => (
-                    <div 
-                      key={index}
-                      className="p-4 bg-accent1/20 rounded-lg transform hover:scale-[1.02] transition-all duration-300 flex items-center gap-3"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="h-2 w-2 bg-primary rounded-full"></div>
-                      <p className="text-primary">{goal}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div 
-                className="animate-fade-in backdrop-blur-sm bg-white/30 rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300" 
-                style={{ animationDelay: '200ms' }}
-              >
-                <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-                  <span className="text-3xl">🚀</span> In Progress
-                </h3>
-                <div className="grid gap-4">
-                  {impossibleList.inProgress.map((goal, index) => (
-                    <div 
-                      key={index}
-                      className="p-4 bg-accent2/20 rounded-lg transform hover:scale-[1.02] transition-all duration-300 flex items-center gap-3"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="h-2 w-2 bg-primary rounded-full animate-pulse"></div>
-                      <p className="text-primary">{goal}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div 
-                className="animate-fade-in backdrop-blur-sm bg-white/30 rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300" 
-                style={{ animationDelay: '400ms' }}
-              >
-                <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-                  <span className="text-3xl">🎯</span> Future Goals
-                </h3>
-                <div className="grid gap-4">
-                  {impossibleList.future.map((goal, index) => (
-                    <div 
-                      key={index}
-                      className="p-4 bg-primary/5 rounded-lg transform hover:scale-[1.02] transition-all duration-300 flex items-center gap-3 group"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="h-2 w-2 bg-primary rounded-full group-hover:animate-pulse"></div>
-                      <p className="text-primary">{goal}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ImpossibleList 
+              completed={impossibleList.completed}
+              inProgress={impossibleList.inProgress}
+              future={impossibleList.future}
+            />
           </TabsContent>
 
           <TabsContent value="resume">
