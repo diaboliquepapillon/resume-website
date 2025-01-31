@@ -125,23 +125,35 @@ const Contact = () => {
             </Dialog>
 
             <div className="mt-6 p-6 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg border border-primary/10">
-              <h3 className="font-semibold text-primary text-lg mb-2">Why Contact Me?</h3>
-              <ul className="space-y-2 text-primary/70">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent2"></div>
-                  Professional Collaboration
+              <h3 className="font-semibold text-primary text-lg mb-4">Why Contact Me?</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-accent2"></div>
+                  <div>
+                    <h4 className="font-medium text-primary">Professional Collaboration</h4>
+                    <p className="text-sm text-primary/70">Let's work together on innovative projects and create impactful solutions.</p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent1"></div>
-                  Project Inquiries
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-accent1"></div>
+                  <div>
+                    <h4 className="font-medium text-primary">Project Inquiries</h4>
+                    <p className="text-sm text-primary/70">Have a project in mind? I'd love to hear about it and discuss how I can help.</p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent2"></div>
-                  Technical Discussions
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-accent2"></div>
+                  <div>
+                    <h4 className="font-medium text-primary">Technical Discussions</h4>
+                    <p className="text-sm text-primary/70">Let's exchange ideas about AI, data science, and emerging technologies.</p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent1"></div>
-                  Networking Opportunities
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-accent1"></div>
+                  <div>
+                    <h4 className="font-medium text-primary">Networking Opportunities</h4>
+                    <p className="text-sm text-primary/70">Connect with me to explore potential collaborations and share industry insights.</p>
+                  </div>
                 </li>
               </ul>
             </div>
