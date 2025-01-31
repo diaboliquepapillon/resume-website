@@ -19,10 +19,10 @@ export default {
     },
     extend: {
       colors: {
-        background: "#e8efed",
-        primary: "#26574a",
-        accent1: "#f1c2dc",
-        accent2: "#cdd673",
+        background: "#F6F6F7",
+        primary: "#8B5CF6",
+        accent1: "#D946EF",
+        accent2: "#0EA5E9",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -87,6 +87,13 @@ export default {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-hero': 'linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)',
+        'gradient-projects': 'linear-gradient(225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%)',
+        'gradient-about': 'linear-gradient(to top, #accbee 0%, #e7f0fd 100%)',
+        'gradient-contact': 'linear-gradient(to right, #ee9ca7, #ffdde1)',
       },
     },
   },
