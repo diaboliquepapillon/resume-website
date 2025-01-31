@@ -7,7 +7,8 @@ const generateData = (length: number) => {
     name: `Point ${i + 1}`,
     value: Math.sin(i / 5) * 50 + 50 + Math.random() * 10,
     value2: Math.cos(i / 3) * 30 + 50 + Math.random() * 8,
-    value3: Math.sin(i / 4) * 40 + 60 + Math.random() * 12
+    value3: Math.sin(i / 4) * 40 + 60 + Math.random() * 12,
+    value4: Math.cos(i / 6) * 35 + 55 + Math.random() * 15
   }));
 };
 
@@ -16,11 +17,12 @@ const data = generateData(30);
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white/90 p-3 rounded-lg shadow-lg border border-primary/20 backdrop-blur-sm">
+      <div className="bg-white/90 p-3 rounded-lg shadow-lg border border-primary/20 backdrop-blur-sm animate-scale">
+        <div className="text-xs text-primary/60 mb-2">Data Point Values</div>
         {payload.map((entry: any, index: number) => (
-          <div key={index} className="flex items-center gap-2">
+          <div key={index} className="flex items-center gap-2 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
             <div 
-              className="w-3 h-3 rounded-full" 
+              className="w-3 h-3 rounded-full animate-pulse" 
               style={{ backgroundColor: entry.color }}
             />
             <span className="text-primary/80 font-medium">
@@ -37,7 +39,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 const Room = () => {
   return (
     <div className="relative w-full h-full overflow-hidden rounded-2xl border border-primary/10 bg-gradient-to-br from-white/50 to-transparent backdrop-blur-sm shadow-xl transform perspective-[1000px] hover:rotate-y-2 transition-transform duration-500">
-      {/* Enhanced background gradients */}
+      {/* Enhanced background gradients with more dynamic animations */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent1/30 rounded-full filter blur-3xl animate-pulse" 
              style={{ animationDuration: '4s' }} />
@@ -50,7 +52,7 @@ const Room = () => {
       {/* Main content container with enhanced 3D effect */}
       <div className="relative z-10 w-full h-full flex items-center justify-center p-8 transform-style-preserve-3d">
         <div className="w-full h-full relative">
-          {/* Static positioned labels with fade-in animation */}
+          {/* Animated labels with hover effects */}
           {[
             { Icon: BrainCircuit, label: 'AI', position: '-left-4 top-1/4', delay: '0.2s', color: 'accent1' },
             { Icon: Network, label: 'Neural Networks', position: '-right-4 top-1/3', delay: '0.4s', color: 'accent2' },
@@ -61,19 +63,19 @@ const Room = () => {
           ].map(({ Icon, label, position, delay, color }) => (
             <div 
               key={label}
-              className={`absolute ${position} opacity-0 flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-all duration-300`}
+              className={`absolute ${position} opacity-0 flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-all duration-300 cursor-pointer`}
               style={{ 
                 animation: 'fade-in 0.8s ease-out forwards',
                 animationDelay: delay,
                 animationFillMode: 'forwards'
               }}
             >
-              <Icon className={`w-5 h-5 text-${color}`} />
+              <Icon className={`w-5 h-5 text-${color} animate-bounce`} />
               <span className="text-sm font-medium text-primary">{label}</span>
             </div>
           ))}
 
-          {/* Enhanced main chart with smooth animation */}
+          {/* Enhanced main chart with smooth animations and interactions */}
           <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}>
@@ -89,6 +91,10 @@ const Room = () => {
                   <linearGradient id="colorValue3" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#cdd673" stopOpacity={0.4}/>
                     <stop offset="95%" stopColor="#cdd673" stopOpacity={0}/>
+                  </linearGradient>
+                  <linearGradient id="colorValue4" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#26574a" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#26574a" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <XAxis 
@@ -119,7 +125,7 @@ const Room = () => {
                   fill="url(#colorValue2)" 
                   strokeWidth={2}
                   isAnimationActive={true}
-                  animationDuration={1500}
+                  animationDuration={1800}
                   animationEasing="ease-out"
                 />
                 <Area 
@@ -130,23 +136,37 @@ const Room = () => {
                   fill="url(#colorValue3)" 
                   strokeWidth={2}
                   isAnimationActive={true}
-                  animationDuration={1500}
+                  animationDuration={2100}
+                  animationEasing="ease-out"
+                />
+                <Area 
+                  type="monotone" 
+                  dataKey="value4" 
+                  stroke="#26574a" 
+                  fillOpacity={0.5} 
+                  fill="url(#colorValue4)" 
+                  strokeWidth={1.5}
+                  strokeDasharray="5 5"
+                  isAnimationActive={true}
+                  animationDuration={2400}
                   animationEasing="ease-out"
                 />
               </AreaChart>
             </ResponsiveContainer>
           </div>
 
-          {/* Subtle floating particles */}
+          {/* Enhanced floating particles with more variety */}
           <div className="absolute inset-0">
-            {[...Array(30)].map((_, i) => (
+            {[...Array(40)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-primary/30 rounded-full"
+                className={`absolute w-${Math.random() > 0.5 ? '2' : '1'} h-${Math.random() > 0.5 ? '2' : '1'} ${
+                  Math.random() > 0.7 ? 'bg-accent1' : Math.random() > 0.5 ? 'bg-accent2' : 'bg-primary'
+                }/30 rounded-full`}
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animation: 'pulse 3s ease-in-out infinite',
+                  animation: `pulse ${2 + Math.random() * 2}s ease-in-out infinite`,
                   animationDelay: `${Math.random() * 2}s`,
                   transform: `translateZ(${Math.random() * 50}px)`
                 }}
