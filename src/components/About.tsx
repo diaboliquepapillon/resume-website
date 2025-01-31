@@ -9,6 +9,7 @@ import { FileText } from 'lucide-react';
 import EducationDialog from './about/EducationDialog';
 import WorkExperienceDialog from './about/WorkExperienceDialog';
 import CertificationsDialog from './about/CertificationsDialog';
+import VolunteerExperienceDialog from './about/VolunteerExperienceDialog';
 import SkillsSection from './about/SkillsSection';
 import InterestsSection from './about/InterestsSection';
 import ImpossibleList from './about/ImpossibleList';
@@ -147,61 +148,31 @@ const About = () => {
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         <Tabs defaultValue="about" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-8 bg-primary/90 backdrop-blur-sm rounded-xl border border-primary/20 shadow-lg">
-            <TabsTrigger 
-              value="about" 
-              className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300"
-            >
+            <TabsTrigger value="about" className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300">
               About
             </TabsTrigger>
-            <TabsTrigger 
-              value="impossible-list" 
-              className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300"
-            >
+            <TabsTrigger value="impossible-list" className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300">
               Impossible List
             </TabsTrigger>
-            <TabsTrigger 
-              value="resume" 
-              className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300"
-            >
+            <TabsTrigger value="resume" className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300">
               Resume
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="about">
             <div className="space-y-8 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">
-                About Me
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">About Me</h2>
               <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg animate-fade-in">
                 Passionate Computer Science undergraduate at Monash University with expertise in AI, data analytics, and cloud technologies. 
                 Skilled in Python, SQL, Tableau, and predictive modelling, with hands-on experience in data analysis and visualisation. 
                 Strong communicator and problem-solver, eager to contribute to impactful projects.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <EducationDialog education={education} />
                 <WorkExperienceDialog workExperience={workExperience} />
                 <CertificationsDialog certifications={certifications} />
-              </div>
-
-              <div className="space-y-8">
-                <div className="bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg">
-                  <h3 className="text-2xl font-bold mb-6 text-primary">Volunteer Experience</h3>
-                  <div className="space-y-6">
-                    {volunteerExperience.map((volunteer, index) => (
-                      <div key={index} className="p-4 bg-accent1/10 rounded-lg">
-                        <h4 className="font-bold text-lg text-primary">{volunteer.title}</h4>
-                        <p className="text-primary/90">{volunteer.organization}</p>
-                        <p className="text-primary/80 text-sm mb-2">{volunteer.period}</p>
-                        <ul className="list-disc pl-4 space-y-1">
-                          {volunteer.description.map((desc, idx) => (
-                            <li key={idx} className="text-primary/90">{desc}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <VolunteerExperienceDialog volunteerExperience={volunteerExperience} />
               </div>
 
               <InterestsSection />
