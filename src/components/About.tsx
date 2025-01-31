@@ -36,14 +36,14 @@ const education = [
 
 const workExperience = [
   {
-    title: "Residential Office Bearer",
-    company: "Monash Student Association",
-    period: "Jan 2024 - Dec 2024",
+    title: "Faculty of IT Ambassador",
+    company: "Monash University",
+    period: "Jul 2023 - Present",
     description: [
-      "Represented over 3,000 residents in advocating for improved residential standards",
-      "Conducted detailed research and data analysis on residential conditions, providing actionable recommendations that enhanced living standards"
+      "Represented the Faculty of IT at events, enhancing collaboration and teamwork across diverse cultural settings",
+      "Delivered strategic communications to engage students and stakeholders, enhancing the understanding of data science applications"
     ],
-    skills: ["Data Analysis", "Research", "Advocacy", "Leadership", "Problem-Solving"]
+    skills: ["Public Speaking", "Communication", "Event Management", "Cultural Awareness", "Leadership"]
   },
   {
     title: "IBL Intern",
@@ -58,16 +58,6 @@ const workExperience = [
     skills: ["Python", "SQL", "Tableau", "Data Analysis", "Predictive Modeling", "Data Visualization"]
   },
   {
-    title: "Faculty of IT Ambassador",
-    company: "Monash University",
-    period: "Jul 2023 - Present",
-    description: [
-      "Represented the Faculty of IT at events, enhancing collaboration and teamwork across diverse cultural settings",
-      "Delivered strategic communications to engage students and stakeholders, enhancing the understanding of data science applications"
-    ],
-    skills: ["Public Speaking", "Communication", "Event Management", "Cultural Awareness", "Leadership"]
-  },
-  {
     title: "Alumni Support Assistant",
     company: "Monash University",
     period: "Jun 2023 - Dec 2024",
@@ -79,6 +69,16 @@ const workExperience = [
       "Collaborated with cross-functional teams to present insights from data models, improving decision-making"
     ],
     skills: ["Data Analytics", "Relationship Management", "Communication", "Fundraising", "Strategic Planning"]
+  },
+  {
+    title: "Residential Office Bearer",
+    company: "Monash Student Association",
+    period: "Jan 2024 - Dec 2024",
+    description: [
+      "Represented over 3,000 residents in advocating for improved residential standards",
+      "Conducted detailed research and data analysis on residential conditions, providing actionable recommendations that enhanced living standards"
+    ],
+    skills: ["Data Analysis", "Research", "Advocacy", "Leadership", "Problem-Solving"]
   }
 ];
 
