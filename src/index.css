@@ -10,7 +10,11 @@
   }
   
   body {
-    @apply bg-background text-primary font-sans;
+    @apply bg-background text-primary font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent1 text-primary;
   }
 }
 
