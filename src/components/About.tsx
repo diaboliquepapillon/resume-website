@@ -160,17 +160,20 @@ const About = () => {
           </div>
         </div>
 
-        {/* New Skills Section */}
+        {/* Skills Section with Updated Animations */}
         <div className="mt-16 grid md:grid-cols-2 gap-8">
           {/* Soft Skills */}
           <div className="p-6 border border-primary rounded-lg hover:shadow-xl transition-all duration-300 animate-float">
-            <h3 className="text-2xl font-bold mb-6 text-primary">Soft Skills</h3>
+            <h3 className="text-2xl font-bold mb-6 text-primary animate-fade-in">Soft Skills</h3>
             <div className="flex flex-wrap gap-3">
               {softSkills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-accent1 text-primary rounded-full hover:scale-105 transition-transform duration-300 animate-pulse"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="px-4 py-2 bg-accent1 text-primary rounded-full hover:scale-110 transition-transform duration-300 animate-wiggle"
+                  style={{ 
+                    animationDelay: `${index * 200}ms`,
+                    animationDuration: '2s'
+                  }}
                 >
                   {skill}
                 </span>
@@ -180,13 +183,16 @@ const About = () => {
 
           {/* Programming Skills */}
           <div className="p-6 border border-primary rounded-lg hover:shadow-xl transition-all duration-300 animate-float">
-            <h3 className="text-2xl font-bold mb-6 text-primary">Programming</h3>
+            <h3 className="text-2xl font-bold mb-6 text-primary animate-fade-in">Programming</h3>
             <div className="flex flex-wrap gap-3">
               {programmingSkills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-accent2 text-primary rounded-full hover:scale-105 transition-transform duration-300 animate-bounce"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="px-4 py-2 bg-accent2 text-primary rounded-full hover:scale-110 transition-transform duration-300 animate-rotate-slow"
+                  style={{ 
+                    animationDelay: `${index * 300}ms`,
+                    animationDuration: '8s'
+                  }}
                 >
                   {skill}
                 </span>
