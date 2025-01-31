@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Code, Users, FileText, GraduationCap, Briefcase, Award } from 'lucide-react';
+import { Brain, Code, Users, FileText, GraduationCap, Briefcase, Award, Heart } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -16,77 +16,77 @@ import {
 } from "@/components/ui/tabs";
 import Skills from './Skills';
 
-  const certifications = [
-    "AWS Certified Solutions Architect",
-    "Google Data Analytics Professional Certificate",
-    "Microsoft Azure Data Fundamentals"
-  ];
+const certifications = [
+  "AWS Certified Solutions Architect",
+  "Google Data Analytics Professional Certificate",
+  "Microsoft Azure Data Fundamentals"
+];
 
-  const education = [
-    {
-      degree: "Bachelor of Computer Science",
-      institution: "Monash University",
-      year: "2021-2024",
-      details: "Major in Data Science"
-    }
-  ];
+const education = [
+  {
+    degree: "Bachelor of Computer Science",
+    institution: "Monash University",
+    year: "2021-2024",
+    details: "Major in Data Science"
+  }
+];
 
-  const workExperience = [
-    {
-      title: "Data Science Intern",
-      company: "Transurban",
-      period: "2023",
-      description: "Analyzed traffic patterns and developed predictive models"
-    },
-    {
-      title: "Faculty IT Ambassador",
-      company: "Monash University",
-      period: "2022-2023",
-      description: "Provided technical support and conducted workshops"
-    }
-  ];
+const workExperience = [
+  {
+    title: "Data Science Intern",
+    company: "Transurban",
+    period: "2023",
+    description: "Analyzed traffic patterns and developed predictive models"
+  },
+  {
+    title: "Faculty IT Ambassador",
+    company: "Monash University",
+    period: "2022-2023",
+    description: "Provided technical support and conducted workshops"
+  }
+];
 
-  const softSkills = [
-    "Leadership",
-    "Communication",
-    "Analytical Thinking",
-    "Problem-Solving",
-    "Client Negotiation"
-  ];
+const softSkills = [
+  "Leadership",
+  "Communication",
+  "Analytical Thinking",
+  "Problem-Solving",
+  "Client Negotiation"
+];
 
-  const programmingSkills = [
-    "Python",
-    "SQL",
-    "R",
-    "Tableau",
-    "Jupyter Notebook",
-    "Statistical Modeling",
-    "HTML5",
-    "CSS3",
-    "C++"
-  ];
+const programmingSkills = [
+  "Python",
+  "SQL",
+  "R",
+  "Tableau",
+  "Jupyter Notebook",
+  "Statistical Modeling",
+  "HTML5",
+  "CSS3",
+  "C++"
+];
 
-  const impossibleList = {
-    completed: [
-      "Graduate with First Class Honours in Computer Science",
-      "Land first tech internship",
-      "Complete AWS certification",
-      "Present at a tech conference"
-    ],
-    inProgress: [
-      "Build and launch a SaaS product",
-      "Contribute to open source projects",
-      "Learn system design patterns",
-      "Master cloud architecture"
-    ],
-    future: [
-      "Start a tech company",
-      "Mentor 100 aspiring developers",
-      "Write a technical book",
-      "Speak at major tech conferences globally",
-      "Create an educational platform for developers"
-    ]
-  };
+const impossibleList = {
+  completed: [
+    "Graduate with First Class Honours in Computer Science",
+    "Land first tech internship",
+    "Complete AWS certification",
+    "Present at a tech conference"
+  ],
+  inProgress: [
+    "Build and launch a SaaS product",
+    "Contribute to open source projects",
+    "Learn system design patterns",
+    "Master cloud architecture"
+  ],
+  future: [
+    "Start a tech company",
+    "Mentor 100 aspiring developers",
+    "Write a technical book",
+    "Speak at major tech conferences globally",
+    "Create an educational platform for developers"
+  ]
+};
 
 const About = () => {
   return (
@@ -240,25 +240,66 @@ const About = () => {
                 </Dialog>
               </div>
 
-              <div className="mt-8 backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg animate-fade-in">
-                <h3 className="text-2xl font-bold mb-6 text-primary">Interests</h3>
+              <div className="mt-8 bg-white p-8 rounded-xl border-2 border-primary/20 shadow-lg animate-fade-in hover:border-primary/40 transition-all duration-300">
+                <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+                  <Heart className="w-6 h-6 text-primary" />
+                  Interests
+                </h3>
                 <div className="flex flex-wrap gap-4">
-                  <span className="px-4 py-2 bg-accent2/80 text-primary rounded-full hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                  <span className="px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
                     Traveling
                   </span>
-                  <span className="px-4 py-2 bg-accent1/80 text-primary rounded-full hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                  <span className="px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
                     Soccer
                   </span>
-                  <span className="px-4 py-2 bg-accent2/80 text-primary rounded-full hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                  <span className="px-4 py-2 bg-accent2 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
                     Movie reviewing
                   </span>
-                  <span className="px-4 py-2 bg-accent1/80 text-primary rounded-full hover:scale-105 transition-all duration-300 hover:shadow-lg">
+                  <span className="px-4 py-2 bg-accent1 text-primary font-medium rounded-full hover:scale-105 transition-all duration-300 shadow-md">
                     Baking
                   </span>
                 </div>
               </div>
 
-              <Skills softSkills={softSkills} programmingSkills={programmingSkills} />
+              <div className="mt-16 grid md:grid-cols-2 gap-8">
+                {/* Soft Skills */}
+                <div className="p-8 rounded-xl bg-white border-2 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 group">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Brain className="w-6 h-6 text-primary group-hover:animate-bounce" />
+                    <h3 className="text-2xl font-bold text-primary">Soft Skills</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {softSkills.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-accent1 text-primary font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-md animate-fade-in"
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Programming Skills */}
+                <div className="p-8 rounded-xl bg-white border-2 border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 group">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Code className="w-6 h-6 text-primary group-hover:animate-bounce" />
+                    <h3 className="text-2xl font-bold text-primary">Programming</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    {programmingSkills.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-accent2 text-primary font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-md animate-fade-in"
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </TabsContent>
 
