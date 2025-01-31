@@ -14,17 +14,17 @@ const Hero = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Text content */}
-          <div className="space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold text-primary animate-slide-up bg-clip-text">
+          <div className="space-y-8">
+            <div className="space-y-4 opacity-0 animate-[slide-up_0.6s_ease-out_forwards]">
+              <h1 className="text-5xl lg:text-7xl font-bold text-primary bg-clip-text">
                 Aylin Vahabova
               </h1>
-              <div className="flex gap-6 opacity-0 animate-[fade-in_0.5s_ease-out_0.3s_forwards]">
+              <div className="flex gap-6">
                 <a 
                   href="https://github.com/diaboliquepapillon" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-primary hover:text-primary/80 transition-all duration-300 hover:-translate-y-1"
                 >
                   <Github className="w-7 h-7" />
                 </a>
@@ -32,7 +32,7 @@ const Hero = () => {
                   href="https://linkedin.com/in/aylinvahabova" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-primary hover:text-primary/80 transition-all duration-300 hover:-translate-y-1"
                 >
                   <Linkedin className="w-7 h-7" />
                 </a>
@@ -40,7 +40,7 @@ const Hero = () => {
                   href="https://kaggle.com/aylinchik" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-primary hover:text-primary/80 transition-all duration-300 hover:-translate-y-1"
                 >
                   <Database className="w-7 h-7" />
                 </a>
@@ -48,14 +48,14 @@ const Hero = () => {
                   href="https://drive.google.com/drive/folders/1r58UaN21Io3vhiS7Dk0Lp1_GD92UnGbP?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-primary hover:text-primary/80 transition-all duration-300 hover:-translate-y-1"
                 >
                   <FileText className="w-7 h-7" />
                 </a>
               </div>
             </div>
 
-            <div className="space-y-6 opacity-0 animate-[fade-in_0.5s_ease-out_0.6s_forwards]">
+            <div className="space-y-6 opacity-0 animate-[slide-up_0.6s_ease-out_0.3s_forwards]">
               <h2 className="text-2xl lg:text-3xl text-primary/90 font-semibold">
                 Data Scientist
               </h2>
@@ -67,17 +67,17 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-6 opacity-0 animate-[fade-in_0.5s_ease-out_0.9s_forwards]">
+            <div className="flex flex-wrap gap-6 opacity-0 animate-[slide-up_0.6s_ease-out_0.6s_forwards]">
               <a 
                 href="#projects" 
-                className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg group flex items-center gap-2"
+                className="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2"
               >
                 View Projects
                 <ChevronDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
               </a>
               <a 
                 href="#contact" 
-                className="px-8 py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary/10 transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
+                className="px-8 py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1 shadow-lg"
               >
                 Get in Touch
               </a>
@@ -85,14 +85,14 @@ const Hero = () => {
           </div>
 
           {/* Right side - Room visualization */}
-          <div className="lg:h-[600px] opacity-0 animate-[fade-in_0.5s_ease-out_1.2s_forwards]">
+          <div className="lg:h-[600px] opacity-0 animate-[fade-in_0.8s_ease-out_0.9s_forwards]">
             <Room />
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-[fade-in_0.5s_ease-out_1.5s_forwards]">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-[fade-in_0.5s_ease-out_1.2s_forwards]">
         <button 
           onClick={scrollToProjects} 
           className="text-primary/60 hover:text-primary transition-colors duration-300 p-2"
