@@ -28,7 +28,7 @@ const Room = () => {
       {/* Main content container with enhanced 3D effect */}
       <div className="relative z-10 w-full h-full flex items-center justify-center p-8 transform-style-preserve-3d">
         <div className="w-full h-full relative">
-          {/* Floating icons with gentle fade animations */}
+          {/* Static positioned labels with fade-in animation */}
           {[
             { Icon: BrainCircuit, label: 'AI', position: '-left-4 top-1/4', delay: '0.2s', color: 'accent1' },
             { Icon: Network, label: 'Neural Networks', position: '-right-4 top-1/3', delay: '0.4s', color: 'accent2' },
@@ -39,12 +39,11 @@ const Room = () => {
           ].map(({ Icon, label, position, delay, color }) => (
             <div 
               key={label}
-              className={`absolute ${position} animate-fade-in flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-all duration-300`}
+              className={`absolute ${position} opacity-0 flex items-center gap-2 bg-white/90 p-3 rounded-xl shadow-lg backdrop-blur-sm border border-${color} transform hover:scale-110 transition-all duration-300`}
               style={{ 
+                animation: 'fade-in 0.8s ease-out forwards',
                 animationDelay: delay,
-                animationDuration: '0.8s',
-                opacity: 0,
-                animation: 'fade-in 0.8s ease-out forwards'
+                animationFillMode: 'forwards'
               }}
             >
               <Icon className={`w-5 h-5 text-${color}`} />
@@ -52,8 +51,8 @@ const Room = () => {
             </div>
           ))}
 
-          {/* Enhanced main chart */}
-          <div className="absolute inset-0 animate-fade-in transform hover:translate-z-4 transition-transform duration-300">
+          {/* Enhanced main chart with smooth animation */}
+          <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}>
                 <defs>
@@ -73,6 +72,9 @@ const Room = () => {
                   fillOpacity={1} 
                   fill="url(#colorValue)" 
                   strokeWidth={2}
+                  isAnimationActive={true}
+                  animationDuration={1500}
+                  animationEasing="ease-out"
                 />
                 <Area 
                   type="monotone" 
@@ -81,20 +83,24 @@ const Room = () => {
                   fillOpacity={1} 
                   fill="url(#colorValue2)" 
                   strokeWidth={2}
+                  isAnimationActive={true}
+                  animationDuration={1500}
+                  animationEasing="ease-out"
                 />
               </AreaChart>
             </ResponsiveContainer>
           </div>
 
-          {/* Enhanced floating particles */}
+          {/* Subtle floating particles */}
           <div className="absolute inset-0">
             {[...Array(30)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-primary/30 rounded-full animate-pulse"
+                className="absolute w-2 h-2 bg-primary/30 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
+                  animation: 'pulse 3s ease-in-out infinite',
                   animationDelay: `${Math.random() * 2}s`,
                   transform: `translateZ(${Math.random() * 50}px)`
                 }}
