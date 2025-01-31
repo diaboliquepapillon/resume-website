@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Star, Coffee, Music, Gamepad, Camera } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const InterestsSection = () => {
   const createFloatingEmoji = (emoji: string, index: number, x: number) => {
@@ -57,12 +58,29 @@ const InterestsSection = () => {
     });
   };
 
+  const handleClickMeButton = (event: React.MouseEvent) => {
+    const allEmojis = interests.flatMap(interest => interest.emojis);
+    const randomEmojis = Array(4).fill(null).map(() => 
+      allEmojis[Math.floor(Math.random() * allEmojis.length)]
+    );
+    handleInterestClick(randomEmojis, event);
+  };
+
   return (
     <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-accent1/10 via-white to-accent2/10 border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
-      <h3 className="text-2xl font-bold mb-8 text-primary flex items-center gap-2">
-        <Heart className="w-6 h-6 text-primary animate-pulse" />
-        Interests
-      </h3>
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-2">
+          <Heart className="w-6 h-6 text-primary animate-pulse" />
+          <h3 className="text-2xl font-bold text-primary">Interests</h3>
+        </div>
+        <Button
+          onClick={handleClickMeButton}
+          variant="outline"
+          className="bg-white/50 hover:bg-white/80 transition-all duration-300"
+        >
+          Click me! ✨
+        </Button>
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {interests.map((interest, index) => {
           const Icon = interest.icon;

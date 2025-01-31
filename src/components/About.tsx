@@ -36,6 +36,15 @@ const education = [
 
 const workExperience = [
   {
+    title: "Residential Office Bearer",
+    company: "Monash Student Association",
+    period: "Jan 2024 - Dec 2024",
+    description: [
+      "Represented over 3,000 residents in advocating for improved residential standards",
+      "Conducted detailed research and data analysis on residential conditions, providing actionable recommendations that enhanced living standards"
+    ]
+  },
+  {
     title: "IBL Intern",
     company: "Transurban",
     period: "Jul 2024 - Dec 2024",
@@ -70,6 +79,14 @@ const workExperience = [
 ];
 
 const volunteerExperience = [
+  {
+    title: "Russian Language Drop-in",
+    organization: "Monash Student Association",
+    period: "June 2023 - Oct 2023",
+    description: [
+      "Fostered cultural exchange and language learning by teaching Russian to 20+ students, enhancing communication and engagement within the university community"
+    ]
+  },
   {
     title: "Residential Advisor",
     organization: "Monash Residential Services",
