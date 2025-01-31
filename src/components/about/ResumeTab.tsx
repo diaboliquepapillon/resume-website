@@ -1,10 +1,45 @@
 import React from 'react';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Briefcase, GraduationCap, Code, Brain } from 'lucide-react';
 
 const ResumeTab = () => {
   return (
     <div className="animate-fade-in">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-primary">Resume</h2>
+      
+      {/* Overview Section */}
+      <div className="bg-white/90 p-4 md:p-6 rounded-xl border border-primary/20 shadow-lg mb-6 md:mb-8">
+        <h3 className="text-xl md:text-2xl font-semibold text-primary mb-4">Professional Overview</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-primary/80">
+          <div className="flex items-start gap-3">
+            <Briefcase className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
+            <div>
+              <h4 className="font-medium">Experience</h4>
+              <p className="text-sm">Data Scientist with expertise in machine learning and analytics</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <GraduationCap className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
+            <div>
+              <h4 className="font-medium">Education</h4>
+              <p className="text-sm">Master of Data Science from Monash University</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Code className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
+            <div>
+              <h4 className="font-medium">Technical Skills</h4>
+              <p className="text-sm">Python, R, SQL, Machine Learning, Deep Learning</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Brain className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
+            <div>
+              <h4 className="font-medium">Specialization</h4>
+              <p className="text-sm">Data Analysis, Statistical Modeling, AI Applications</p>
+            </div>
+          </div>
+        </div>
+      </div>
       
       {/* Contact Information */}
       <div className="bg-white/90 p-4 md:p-6 rounded-xl border border-primary/20 shadow-lg mb-6 md:mb-8">
