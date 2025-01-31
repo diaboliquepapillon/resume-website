@@ -18,18 +18,41 @@ const ResumeTab = () => {
         </Button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h3 className="text-2xl font-semibold text-primary mb-4">Experience</h3>
-        <ul className="list-disc list-inside">
-          <li>Data Analyst at XYZ Corp (2021 - Present)</li>
-          <li>Intern at ABC Inc. (2020 - 2021)</li>
-        </ul>
-      </div>
+      <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-primary/20">
+        {/* Header Section */}
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-bold mb-2">Aylin Vahabova</h1>
+          <div className="flex justify-center gap-6 text-primary/80">
+            <span className="flex items-center gap-1">
+              <Mail className="w-4 h-4" />
+              aylin.vahabova@monash.edu
+            </span>
+            <span className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" />
+              Melbourne, Australia
+            </span>
+          </div>
+        </div>
 
-      <div className="text-center mt-8 p-4 bg-accent2/10 rounded-lg">
-        <p className="text-primary/80">
-          This is a preview of my resume. For the full detailed version, please click the Resume button above.
-        </p>
+        {/* Summary Section */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <FileText className="w-5 h-5 text-primary" />
+            Professional Summary
+          </h3>
+          <p className="text-primary/80">
+            Data Science student at Monash University with experience in data analysis, 
+            machine learning, and software development. Proven track record in applying 
+            analytical skills to real-world problems through internships and academic projects.
+          </p>
+        </div>
+
+        {/* Preview Note */}
+        <div className="text-center mt-8 p-4 bg-accent2/10 rounded-lg">
+          <p className="text-primary/80">
+            This is a preview of my resume. For the full detailed version, please click the Resume button above.
+          </p>
+        </div>
       </div>
     </div>
   );
