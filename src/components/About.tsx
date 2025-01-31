@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/tabs";
 import Skills from './Skills';
 
-const About = () => {
   const certifications = [
     "AWS Certified Solutions Architect",
     "Google Data Analytics Professional Certificate",
@@ -89,29 +88,29 @@ const About = () => {
     ]
   };
 
+const About = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-b from-background via-background/95 to-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.15),rgba(255,255,255,0))] pointer-events-none" />
+    <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-b from-background via-background to-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-accent1/10 to-accent2/10 pointer-events-none" />
       
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         <Tabs defaultValue="about" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
+          <TabsList className="grid w-full grid-cols-3 mb-8 bg-primary/90 backdrop-blur-sm rounded-xl border border-primary/20 shadow-lg">
             <TabsTrigger 
               value="about" 
-              className="data-[state=active]:bg-primary/20 data-[state=active]:shadow-inner transition-all duration-300"
+              className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300"
             >
               About
             </TabsTrigger>
             <TabsTrigger 
               value="impossible-list" 
-              className="data-[state=active]:bg-primary/20 data-[state=active]:shadow-inner transition-all duration-300"
+              className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300"
             >
               Impossible List
             </TabsTrigger>
             <TabsTrigger 
               value="resume" 
-              className="data-[state=active]:bg-primary/20 data-[state=active]:shadow-inner transition-all duration-300"
+              className="text-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-inner transition-all duration-300"
             >
               Resume
             </TabsTrigger>
@@ -119,10 +118,10 @@ const About = () => {
 
           <TabsContent value="about">
             <div className="space-y-8 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 animate-slide-up">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary">
                 About Me
               </h2>
-              <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary/90 backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg animate-fade-in">
+              <p className="text-lg md:text-xl leading-relaxed mb-12 text-primary bg-white/90 p-6 rounded-xl border border-primary/20 shadow-lg animate-fade-in">
                 Motivated Computer Science undergraduate at Monash University with proven expertise in data analytics and community leadership. 
                 Successfully utilized data analytics to optimize engagement strategies, achieving a 62.5% recurring gift ratio and raising over $18,275 
                 across 65 contributions. Proficient in Python, SQL, R, and Tableau, with strong experience in statistical modeling and data visualization.
@@ -131,32 +130,32 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="p-8 rounded-xl backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-accent1/20 hover:shadow-xl transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
+                    <div className="p-8 rounded-xl bg-white shadow-lg border border-primary/20 hover:bg-accent1/20 transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
                       <GraduationCap className="w-8 h-8 mb-4 group-hover:animate-bounce text-primary" />
                       <h3 className="text-xl font-bold mb-2 text-primary">Education</h3>
                       <p className="text-primary/80">Click to view educational background</p>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="bg-background/95 backdrop-blur-md border border-white/20 shadow-xl max-w-2xl w-[90vw] animate-in zoom-in-90 duration-300">
+                  <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
                     <DialogHeader>
-                      <DialogTitle className="text-3xl font-bold text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Education Journey</DialogTitle>
+                      <DialogTitle className="text-3xl font-bold text-primary">Education Journey</DialogTitle>
                       <DialogDescription>
                         <div className="mt-6 space-y-6">
                           {education.map((edu, index) => (
                             <div 
                               key={index} 
-                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg transform hover:translate-y-[-2px] group"
+                              className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
                               style={{ animationDelay: `${index * 100}ms` }}
                             >
                               <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-accent1/20 group-hover:bg-accent1/30 transition-colors">
-                                  <GraduationCap className="w-6 h-6 text-primary" />
+                                <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
+                                  <GraduationCap className="w-6 h-6" />
                                 </div>
                                 <div className="space-y-2">
-                                  <h4 className="font-bold text-xl text-primary group-hover:text-primary/90 transition-colors">{edu.degree}</h4>
-                                  <p className="text-primary/80 font-medium">{edu.institution}</p>
-                                  <p className="text-primary/70">{edu.year}</p>
-                                  <p className="text-primary/90 mt-2 leading-relaxed">{edu.details}</p>
+                                  <h4 className="font-bold text-xl text-primary">{edu.degree}</h4>
+                                  <p className="text-primary/90 font-medium">{edu.institution}</p>
+                                  <p className="text-primary/80">{edu.year}</p>
+                                  <p className="text-primary mt-2 leading-relaxed">{edu.details}</p>
                                 </div>
                               </div>
                             </div>
@@ -169,32 +168,32 @@ const About = () => {
                 
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="p-8 rounded-xl backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-accent2/20 hover:shadow-xl transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105" style={{ animationDelay: '100ms' }}>
+                    <div className="p-8 rounded-xl bg-white shadow-lg border border-primary/20 hover:bg-accent2/20 transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
                       <Briefcase className="w-8 h-8 mb-4 group-hover:animate-bounce text-primary" />
                       <h3 className="text-xl font-bold mb-2 text-primary">Work Experience</h3>
                       <p className="text-primary/80">Click to view work history</p>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="bg-background/95 backdrop-blur-md border border-white/20 shadow-xl max-w-2xl w-[90vw] animate-in zoom-in-90 duration-300">
+                  <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
                     <DialogHeader>
-                      <DialogTitle className="text-3xl font-bold text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Professional Experience</DialogTitle>
+                      <DialogTitle className="text-3xl font-bold text-primary">Professional Experience</DialogTitle>
                       <DialogDescription>
                         <div className="mt-6 space-y-6">
                           {workExperience.map((work, index) => (
                             <div 
                               key={index} 
-                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg transform hover:translate-y-[-2px] group"
+                              className="p-6 bg-accent2/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
                               style={{ animationDelay: `${index * 100}ms` }}
                             >
                               <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-accent2/20 group-hover:bg-accent2/30 transition-colors">
-                                  <Briefcase className="w-6 h-6 text-primary" />
+                                <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
+                                  <Briefcase className="w-6 h-6" />
                                 </div>
                                 <div className="space-y-2">
-                                  <h4 className="font-bold text-xl text-primary group-hover:text-primary/90 transition-colors">{work.title}</h4>
-                                  <p className="text-primary/80 font-medium">{work.company}</p>
-                                  <p className="text-primary/70">{work.period}</p>
-                                  <p className="text-primary/90 mt-2 leading-relaxed">{work.description}</p>
+                                  <h4 className="font-bold text-xl text-primary">{work.title}</h4>
+                                  <p className="text-primary/90 font-medium">{work.company}</p>
+                                  <p className="text-primary/80">{work.period}</p>
+                                  <p className="text-primary mt-2 leading-relaxed">{work.description}</p>
                                 </div>
                               </div>
                             </div>
@@ -207,29 +206,29 @@ const About = () => {
                 
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="p-8 rounded-xl backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-accent1/20 hover:shadow-xl transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105" style={{ animationDelay: '200ms' }}>
+                    <div className="p-8 rounded-xl bg-white shadow-lg border border-primary/20 hover:bg-accent1/20 transition-all duration-300 cursor-pointer group animate-fade-in hover:scale-105">
                       <Award className="w-8 h-8 mb-4 group-hover:animate-bounce text-primary" />
                       <h3 className="text-xl font-bold mb-2 text-primary">Certifications</h3>
                       <p className="text-primary/80">Click to view certifications</p>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="bg-background/95 backdrop-blur-md border border-white/20 shadow-xl max-w-2xl w-[90vw] animate-in zoom-in-90 duration-300">
+                  <DialogContent className="bg-white border-2 border-primary/20 shadow-xl max-w-2xl w-[90vw]">
                     <DialogHeader>
-                      <DialogTitle className="text-3xl font-bold text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Professional Certifications</DialogTitle>
+                      <DialogTitle className="text-3xl font-bold text-primary">Professional Certifications</DialogTitle>
                       <DialogDescription>
                         <div className="mt-6 space-y-6">
                           {certifications.map((cert, index) => (
                             <div 
                               key={index} 
-                              className="p-6 backdrop-blur-sm bg-white/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg transform hover:translate-y-[-2px] group"
+                              className="p-6 bg-accent1/10 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
                               style={{ animationDelay: `${index * 100}ms` }}
                             >
                               <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-accent1/20 group-hover:bg-accent1/30 transition-colors">
-                                  <Award className="w-6 h-6 text-primary" />
+                                <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
+                                  <Award className="w-6 h-6" />
                                 </div>
                                 <div className="space-y-2">
-                                  <p className="text-lg font-medium text-primary group-hover:text-primary/90 transition-colors">{cert}</p>
+                                  <p className="text-lg font-medium text-primary">{cert}</p>
                                 </div>
                               </div>
                             </div>
