@@ -1,6 +1,8 @@
 import React from 'react';
-import { FileText, Download, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
+import { FileText, Download, ExternalLink, Mail, MapPin } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+
+const RESUME_URL = "https://drive.google.com/file/d/1y4FJLxDArpx8AMthTN6VoGL4vRtICUK3/view?usp=sharing";
 
 const ResumeTab = () => {
   return (
@@ -9,19 +11,14 @@ const ResumeTab = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-primary animate-fade-in">Resume</h2>
         <div className="flex gap-4">
           <Button
-            onClick={() => window.open('/resume.pdf', '_blank')}
+            onClick={() => window.open(RESUME_URL, '_blank')}
             className="flex items-center gap-2 bg-primary hover:bg-primary/90"
           >
             <ExternalLink className="w-4 h-4" />
             View PDF
           </Button>
           <Button
-            onClick={() => {
-              const link = document.createElement('a');
-              link.href = '/resume.pdf';
-              link.download = 'Aylin_Vahabova_Resume.pdf';
-              link.click();
-            }}
+            onClick={() => window.open(RESUME_URL, '_blank')}
             className="flex items-center gap-2 bg-accent1 hover:bg-accent1/90"
           >
             <Download className="w-4 h-4" />
@@ -62,7 +59,7 @@ const ResumeTab = () => {
         {/* Preview Note */}
         <div className="text-center mt-8 p-4 bg-accent2/10 rounded-lg">
           <p className="text-primary/80">
-            This is a preview of my resume. For the full detailed version, please download the PDF above.
+            This is a preview of my resume. For the full detailed version, please click the View PDF or Download buttons above.
           </p>
         </div>
       </div>
