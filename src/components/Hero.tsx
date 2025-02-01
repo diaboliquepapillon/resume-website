@@ -57,7 +57,7 @@ const Hero = () => {
 
             <div className="space-y-4 sm:space-y-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards]">
               <h2 className="text-xl sm:text-2xl lg:text-3xl text-primary/90 font-semibold">
-                Final Year Computer Science Student (Data Science)
+                Final Year Computer Science Student (Data Science) at Monash University
               </h2>
               <p className="text-base sm:text-lg text-primary/80 max-w-2xl leading-relaxed backdrop-blur-sm bg-white/30 p-4 sm:p-6 rounded-xl border border-primary/10 shadow-lg">
                 Passionate about transforming complex data into actionable insights. 
