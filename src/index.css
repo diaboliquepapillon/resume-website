@@ -7,10 +7,42 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   
   body {
     @apply bg-background text-primary font-sans;
+  }
+
+  /* Smooth scrolling for modern browsers */
+  @media screen and (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(38, 87, 74, 0.5);
+      border-radius: 8px;
+      border: 3px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(38, 87, 74, 0.7);
+      border: 3px solid transparent;
+      background-clip: content-box;
+    }
   }
 }
 

@@ -126,6 +126,9 @@ const DataScienceWebsites = () => {
           opts={{
             align: "start",
             loop: true,
+            dragFree: true, // Enables momentum-based scrolling
+            containScroll: "trimSnaps",
+            skipSnaps: true, // Allows free-form scrolling
           }}
           className="w-full max-w-5xl mx-auto"
         >
