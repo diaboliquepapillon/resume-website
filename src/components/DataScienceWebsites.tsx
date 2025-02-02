@@ -40,7 +40,7 @@ const websites: Website[] = [
       "API development"
     ],
     icon: <Database className="w-8 h-8 text-primary" />,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1633555338815-b82e96e7b981?auto=format&fit=crop&w=800&q=80" // AI classifying images
   },
   {
     title: "CineCompass",
@@ -60,7 +60,7 @@ const websites: Website[] = [
       "AI web app deployment"
     ],
     icon: <ChartBar className="w-8 h-8 text-accent1" />,
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" // Cinema/movie theater
   },
   {
     title: "BreatheEasy AI",
@@ -80,7 +80,7 @@ const websites: Website[] = [
       "Scientific communication"
     ],
     icon: <Globe className="w-8 h-8 text-accent2" />,
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=800&q=80" // Air quality monitoring station
   },
   {
     title: "VerifyNews",
@@ -100,7 +100,7 @@ const websites: Website[] = [
       "AI service deployment"
     ],
     icon: <Code className="w-8 h-8 text-primary" />,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80" // News/journalism
   }
 ];
 
@@ -122,24 +122,24 @@ const DataScienceWebsites = () => {
           </p>
         </div>
 
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-          dragFree: true,
-          containScroll: "trimSnaps",
-          skipSnaps: true,
-        }}
-        className="w-full max-w-5xl mx-auto"
-      >
-        <CarouselContent>
-          {websites.map((website, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-              <div className="p-2 h-full">
-                <Card className={cn(
-                  "border-2 border-primary/20 hover:border-primary/40 transition-all duration-300",
-                  "hover:shadow-xl bg-white/95 backdrop-blur-sm h-full flex flex-col"
-                )}>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            dragFree: true,
+            containScroll: "trimSnaps",
+            skipSnaps: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent>
+            {websites.map((website, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                <div className="p-2 h-full">
+                  <Card className={cn(
+                    "border-2 border-primary/20 hover:border-primary/40 transition-all duration-300",
+                    "hover:shadow-xl bg-white/95 backdrop-blur-sm h-full flex flex-col"
+                  )}>
                     <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                       <img
                         src={website.image}
@@ -186,30 +186,31 @@ const DataScienceWebsites = () => {
                         </div>
                       </div>
                     </CardContent>
-                  <CardFooter className="mt-auto">
-                    <Button
-                      asChild
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
-                    >
-                      <a
-                        href={website.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 py-2"
+                    <CardFooter className="mt-auto">
+                      <Button
+                        asChild
+                        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                       >
-                        <Globe className="w-5 h-5" />
-                        Visit Website
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+                        <a
+                          href={website.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 py-2"
+                        >
+                          <Globe className="w-5 h-5" />
+                          Visit Website
+                        </a>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </section>
   );
 };
