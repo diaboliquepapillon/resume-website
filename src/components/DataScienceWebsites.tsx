@@ -129,7 +129,6 @@ const DataScienceWebsites = () => {
             dragFree: true,
             containScroll: "trimSnaps",
             skipSnaps: true,
-            draggable: true, // Enable touch/drag
           }}
           className="w-full max-w-5xl mx-auto touch-pan-y"
         >
