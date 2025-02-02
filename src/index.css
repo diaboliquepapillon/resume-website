@@ -19,6 +19,9 @@
   section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: opacity, transform;
   }
 
   /* Smooth scrolling for modern browsers */
@@ -49,6 +52,24 @@
       border: 3px solid transparent;
       background-clip: content-box;
     }
+  }
+
+  /* Optimize performance */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img {
+    @apply transition-opacity duration-300;
+  }
+
+  img:not([loaded]) {
+    @apply opacity-0;
+  }
+
+  img[loaded] {
+    @apply opacity-100;
   }
 }
 
