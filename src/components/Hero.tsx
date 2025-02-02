@@ -1,6 +1,6 @@
 import React from 'react';
 import Room from './Room';
-import { ChevronDown, Github, Linkedin, FileText, Database } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, FileText, Database, Briefcase } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -68,13 +68,13 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-4 sm:gap-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.6s_forwards]">
-              <a 
-                href="#projects" 
+              <button 
+                onClick={scrollToProjects}
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2 text-sm sm:text-base"
               >
-                View Projects
-                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-y-1" />
-              </a>
+                <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
+                Portfolio
+              </button>
               <a 
                 href="#contact" 
                 className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1 shadow-lg text-sm sm:text-base"
