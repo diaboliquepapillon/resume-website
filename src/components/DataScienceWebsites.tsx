@@ -40,7 +40,7 @@ const websites: Website[] = [
       "API development"
     ],
     icon: <Database className="w-8 h-8 text-primary" />,
-    image: "/photo-1488590528505-98d2b5aba04b.jpg"
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "CineCompass",
@@ -60,7 +60,7 @@ const websites: Website[] = [
       "AI web app deployment"
     ],
     icon: <ChartBar className="w-8 h-8 text-accent1" />,
-    image: "/photo-1487058792275-0ad4aaf24ca7.jpg"
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "BreatheEasy AI",
@@ -80,7 +80,7 @@ const websites: Website[] = [
       "Scientific communication"
     ],
     icon: <Globe className="w-8 h-8 text-accent2" />,
-    image: "/photo-1461749280684-dccba630e2f6.jpg"
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "VerifyNews",
@@ -100,7 +100,7 @@ const websites: Website[] = [
       "AI service deployment"
     ],
     icon: <Code className="w-8 h-8 text-primary" />,
-    image: "/photo-1498050108023-c5249f4df085.jpg"
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
