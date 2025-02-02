@@ -4,11 +4,16 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import DataScienceWebsites from '../components/DataScienceWebsites';
+import ScrollProgress from '../components/scroll/ScrollProgress';
+import BackToTop from '../components/scroll/BackToTop';
 import { Github, Linkedin, Database, FileText } from 'lucide-react';
 
 const Index = () => {
   return (
-    <main className="w-full relative min-h-screen">
+    <main className="w-full relative min-h-screen scroll-smooth">
+      <ScrollProgress />
+      <BackToTop />
+      
       <Hero />
       <About />
       <DataScienceWebsites />
