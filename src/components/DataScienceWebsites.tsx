@@ -106,7 +106,7 @@ const websites: Website[] = [
 
 const DataScienceWebsites = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-accent1/10">
+    <section className="py-20 bg-gradient-to-b from-background to-accent1/10 snap-start">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -122,24 +122,24 @@ const DataScienceWebsites = () => {
           </p>
         </div>
 
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-            dragFree: true, // Enables momentum-based scrolling
-            containScroll: "trimSnaps",
-            skipSnaps: true, // Allows free-form scrolling
-          }}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <CarouselContent>
-            {websites.map((website, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                <div className="p-2 h-full">
-                  <Card className={cn(
-                    "border-2 border-primary/20 hover:border-primary/40 transition-all duration-300",
-                    "hover:shadow-xl bg-white/95 backdrop-blur-sm h-full flex flex-col"
-                  )}>
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+          dragFree: true,
+          containScroll: "trimSnaps",
+          skipSnaps: true,
+        }}
+        className="w-full max-w-5xl mx-auto"
+      >
+        <CarouselContent>
+          {websites.map((website, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+              <div className="p-2 h-full">
+                <Card className={cn(
+                  "border-2 border-primary/20 hover:border-primary/40 transition-all duration-300",
+                  "hover:shadow-xl bg-white/95 backdrop-blur-sm h-full flex flex-col"
+                )}>
                     <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                       <img
                         src={website.image}
@@ -186,31 +186,30 @@ const DataScienceWebsites = () => {
                         </div>
                       </div>
                     </CardContent>
-                    <CardFooter>
-                      <Button
-                        asChild
-                        className="w-full bg-primary hover:bg-primary/90"
+                  <CardFooter className="mt-auto">
+                    <Button
+                      asChild
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <a
+                        href={website.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 py-2"
                       >
-                        <a
-                          href={website.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2"
-                        >
-                          <Globe className="w-4 h-4" />
-                          Visit Website
-                        </a>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
+                        <Globe className="w-5 h-5" />
+                        Visit Website
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </section>
   );
 };

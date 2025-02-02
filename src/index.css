@@ -7,12 +7,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
   
   body {
     @apply bg-background text-primary font-sans;
+  }
+
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   /* Smooth scrolling for modern browsers */
