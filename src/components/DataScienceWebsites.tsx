@@ -9,6 +9,7 @@ import {
 import { Globe, Database, ChartBar, Code, Rocket } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface Website {
   title: string;
@@ -17,6 +18,7 @@ interface Website {
   technologies: string[];
   skills: string[];
   icon: React.ReactNode;
+  image: string;
 }
 
 const websites: Website[] = [
@@ -37,12 +39,13 @@ const websites: Website[] = [
       "ML model deployment",
       "API development"
     ],
-    icon: <Database className="w-8 h-8 text-primary" />
+    icon: <Database className="w-8 h-8 text-primary" />,
+    image: "/photo-1488590528505-98d2b5aba04b.jpg"
   },
   {
     title: "CineCompass",
     description: "Movie recommendation system that suggests films based on user preferences and similarities.",
-    link: "https://breatheeasyai.netlify.app",
+    link: "https://cinecompass.netlify.app",
     technologies: [
       "Python (Flask/FastAPI)",
       "Pandas & Scikit-learn",
@@ -56,7 +59,8 @@ const websites: Website[] = [
       "NLP analysis",
       "AI web app deployment"
     ],
-    icon: <ChartBar className="w-8 h-8 text-accent1" />
+    icon: <ChartBar className="w-8 h-8 text-accent1" />,
+    image: "/photo-1487058792275-0ad4aaf24ca7.jpg"
   },
   {
     title: "BreatheEasy AI",
@@ -75,7 +79,8 @@ const websites: Website[] = [
       "Time-series analysis",
       "Scientific communication"
     ],
-    icon: <Globe className="w-8 h-8 text-accent2" />
+    icon: <Globe className="w-8 h-8 text-accent2" />,
+    image: "/photo-1461749280684-dccba630e2f6.jpg"
   },
   {
     title: "VerifyNews",
@@ -94,7 +99,8 @@ const websites: Website[] = [
       "BERT implementation",
       "AI service deployment"
     ],
-    icon: <Code className="w-8 h-8 text-primary" />
+    icon: <Code className="w-8 h-8 text-primary" />,
+    image: "/photo-1498050108023-c5249f4df085.jpg"
   }
 ];
 
@@ -116,12 +122,28 @@ const DataScienceWebsites = () => {
           </p>
         </div>
 
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
           <CarouselContent>
             {websites.map((website, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                <div className="p-2">
-                  <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl bg-white/95 backdrop-blur-sm">
+                <div className="p-2 h-full">
+                  <Card className={cn(
+                    "border-2 border-primary/20 hover:border-primary/40 transition-all duration-300",
+                    "hover:shadow-xl bg-white/95 backdrop-blur-sm h-full flex flex-col"
+                  )}>
+                    <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+                      <img
+                        src={website.image}
+                        alt={website.title}
+                        className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
                     <CardHeader>
                       <div className="flex items-center gap-3 mb-4">
                         {website.icon}
@@ -133,7 +155,7 @@ const DataScienceWebsites = () => {
                         {website.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-4 flex-grow">
                       <div>
                         <h4 className="font-semibold text-primary mb-2">Technologies:</h4>
                         <div className="flex flex-wrap gap-2">
