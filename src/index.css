@@ -7,7 +7,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
@@ -17,8 +16,6 @@
   }
 
   section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     opacity: 0;
     transform: translateY(20px);
     animation: section-fade-in 0.8s ease-out forwards;
