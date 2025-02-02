@@ -40,7 +40,7 @@ const websites: Website[] = [
       "API development"
     ],
     icon: <Database className="w-8 h-8 text-primary" />,
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+    image: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&q=80"  // Image showing AI classification
   },
   {
     title: "CineCompass",
@@ -60,7 +60,7 @@ const websites: Website[] = [
       "AI web app deployment"
     ],
     icon: <ChartBar className="w-8 h-8 text-accent1" />,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80"  // Movie theatre image
   },
   {
     title: "BreatheEasy AI",
@@ -80,7 +80,7 @@ const websites: Website[] = [
       "Scientific communication"
     ],
     icon: <Globe className="w-8 h-8 text-accent2" />,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80"  // Clear sky and air image
   },
   {
     title: "VerifyNews",
@@ -100,7 +100,7 @@ const websites: Website[] = [
       "AI service deployment"
     ],
     icon: <Code className="w-8 h-8 text-primary" />,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80"  // Newspaper image
   }
 ];
 
