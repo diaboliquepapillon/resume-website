@@ -40,7 +40,7 @@ const websites: Website[] = [
       "API development"
     ],
     icon: <Database className="w-8 h-8 text-primary" />,
-    image: "https://images.unsplash.com/photo-1633555338815-b82e96e7b981?auto=format&fit=crop&w=800&q=80" // AI classifying images
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
   },
   {
     title: "CineCompass",
@@ -60,7 +60,7 @@ const websites: Website[] = [
       "AI web app deployment"
     ],
     icon: <ChartBar className="w-8 h-8 text-accent1" />,
-    image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" // Cinema/movie theater
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
     title: "BreatheEasy AI",
@@ -80,7 +80,7 @@ const websites: Website[] = [
       "Scientific communication"
     ],
     icon: <Globe className="w-8 h-8 text-accent2" />,
-    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=800&q=80" // Air quality monitoring station
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
   {
     title: "VerifyNews",
@@ -100,13 +100,13 @@ const websites: Website[] = [
       "AI service deployment"
     ],
     icon: <Code className="w-8 h-8 text-primary" />,
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80" // News/journalism
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
   }
 ];
 
 const DataScienceWebsites = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-accent1/10 snap-start">
+    <section className="py-20 bg-gradient-to-b from-background to-accent1/10 data-science-portfolio">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -129,8 +129,9 @@ const DataScienceWebsites = () => {
             dragFree: true,
             containScroll: "trimSnaps",
             skipSnaps: true,
+            draggable: true, // Enable touch/drag
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full max-w-5xl mx-auto touch-pan-y"
         >
           <CarouselContent>
             {websites.map((website, index) => (

@@ -1,10 +1,15 @@
 import React from 'react';
 import Room from './Room';
-import { ChevronDown, Github, Linkedin, FileText, Database, Briefcase } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, FileText, Database, Briefcase, Rocket } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToDataScience = () => {
+    const dataScience = document.querySelector('.data-science-portfolio');
+    dataScience?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -74,6 +79,13 @@ const Hero = () => {
               >
                 <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
                 Portfolio
+              </button>
+              <button 
+                onClick={scrollToDataScience}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-accent1 text-primary rounded-xl hover:bg-accent1/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2 text-sm sm:text-base"
+              >
+                <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
+                Explore Side Projects
               </button>
               <a 
                 href="#contact" 
