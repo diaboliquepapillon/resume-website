@@ -1,6 +1,6 @@
 import React from 'react';
 import Room from './Room';
-import { ChevronDown, Github, Linkedin, FileText, Database, Briefcase, Rocket } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, FileText, Database, Trophy, Rocket } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -77,8 +77,8 @@ const Hero = () => {
                 onClick={scrollToProjects}
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2 text-sm sm:text-base"
               >
-                <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
-                Portfolio
+                <Trophy className="w-4 h-4 sm:w-5 sm:h-5" />
+                Accomplishments
               </button>
               <button 
                 onClick={scrollToDataScience}
