@@ -51,10 +51,10 @@ const WorkExperienceDialog: React.FC<WorkExperienceDialogProps> = ({ workExperie
                       <h4 className="font-bold text-xl text-primary">{work.title}</h4>
                       <p className="text-primary/90 font-medium">{work.company}</p>
                       <p className="text-primary/80">{work.period}</p>
-                      <ul className="list-disc ml-4 space-y-1">
+                      <ul className="list-disc space-y-1 ml-5">
                         {work.description.map((desc, idx) => (
-                          <li key={idx} className="text-primary pl-1 marker:text-primary">
-                            <span className="inline-block">{desc}</span>
+                          <li key={idx} className="text-primary marker:text-primary">
+                            {desc}
                           </li>
                         ))}
                       </ul>

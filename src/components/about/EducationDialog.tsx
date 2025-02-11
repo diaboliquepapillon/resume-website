@@ -50,10 +50,10 @@ const EducationDialog: React.FC<EducationDialogProps> = ({ education }) => {
                       <h4 className="font-bold text-xl text-primary">{edu.degree}</h4>
                       <p className="text-primary/90 font-medium">{edu.institution}</p>
                       <p className="text-primary/80">{edu.year}</p>
-                      <ul className="list-disc ml-4 space-y-1">
+                      <ul className="list-disc space-y-1 ml-5">
                         {edu.details.map((detail, idx) => (
-                          <li key={idx} className="text-primary pl-1 marker:text-primary">
-                            <span className="inline-block">{detail}</span>
+                          <li key={idx} className="text-primary marker:text-primary">
+                            {detail}
                           </li>
                         ))}
                       </ul>

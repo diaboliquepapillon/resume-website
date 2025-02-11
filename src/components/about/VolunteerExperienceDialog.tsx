@@ -50,10 +50,10 @@ const VolunteerExperienceDialog: React.FC<VolunteerExperienceDialogProps> = ({ v
                       <h4 className="font-bold text-xl text-primary">{volunteer.title}</h4>
                       <p className="text-primary/90 font-medium">{volunteer.organization}</p>
                       <p className="text-primary/80">{volunteer.period}</p>
-                      <ul className="list-disc ml-4 space-y-1">
+                      <ul className="list-disc space-y-1 ml-5">
                         {volunteer.description.map((desc, idx) => (
-                          <li key={idx} className="text-primary pl-1 marker:text-primary">
-                            <span className="inline-block">{desc}</span>
+                          <li key={idx} className="text-primary marker:text-primary">
+                            {desc}
                           </li>
                         ))}
                       </ul>
