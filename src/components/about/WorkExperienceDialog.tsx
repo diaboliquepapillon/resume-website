@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Briefcase } from 'lucide-react';
 import {
@@ -46,13 +47,15 @@ const WorkExperienceDialog: React.FC<WorkExperienceDialogProps> = ({ workExperie
                     <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
                       <Briefcase className="w-6 h-6" />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-1">
                       <h4 className="font-bold text-xl text-primary">{work.title}</h4>
                       <p className="text-primary/90 font-medium">{work.company}</p>
                       <p className="text-primary/80">{work.period}</p>
-                      <ul className="list-disc pl-4 space-y-1">
+                      <ul className="list-disc ml-4 space-y-1">
                         {work.description.map((desc, idx) => (
-                          <li key={idx} className="text-primary">{desc}</li>
+                          <li key={idx} className="text-primary pl-1 marker:text-primary">
+                            <span className="inline-block">{desc}</span>
+                          </li>
                         ))}
                       </ul>
                       <div className="mt-4">

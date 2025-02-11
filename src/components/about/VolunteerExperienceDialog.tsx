@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Heart } from 'lucide-react';
 import {
@@ -45,13 +46,15 @@ const VolunteerExperienceDialog: React.FC<VolunteerExperienceDialogProps> = ({ v
                     <div className="p-3 rounded-full bg-primary/90 text-white group-hover:bg-primary transition-colors">
                       <Heart className="w-6 h-6" />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-1">
                       <h4 className="font-bold text-xl text-primary">{volunteer.title}</h4>
                       <p className="text-primary/90 font-medium">{volunteer.organization}</p>
                       <p className="text-primary/80">{volunteer.period}</p>
-                      <ul className="list-disc pl-4 space-y-1">
+                      <ul className="list-disc ml-4 space-y-1">
                         {volunteer.description.map((desc, idx) => (
-                          <li key={idx} className="text-primary">{desc}</li>
+                          <li key={idx} className="text-primary pl-1 marker:text-primary">
+                            <span className="inline-block">{desc}</span>
+                          </li>
                         ))}
                       </ul>
                     </div>
