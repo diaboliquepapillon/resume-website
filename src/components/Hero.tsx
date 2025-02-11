@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Room from './Room';
 import { ChevronDown, Github, Linkedin, FileText, Database, Trophy, Rocket } from 'lucide-react';
@@ -72,24 +73,24 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4 sm:gap-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.6s_forwards]">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 opacity-0 animate-[fade-in_0.8s_ease-out_0.6s_forwards]">
               <button 
                 onClick={scrollToProjects}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2 text-sm sm:text-base"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center justify-center sm:justify-start gap-2 text-sm sm:text-base"
               >
                 <Trophy className="w-4 h-4 sm:w-5 sm:h-5" />
                 Accomplishments
               </button>
               <button 
                 onClick={scrollToDataScience}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-accent1 text-primary rounded-xl hover:bg-accent1/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center gap-2 text-sm sm:text-base"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-accent1 text-primary rounded-xl hover:bg-accent1/90 transition-all duration-300 hover:-translate-y-1 shadow-lg group flex items-center justify-center sm:justify-start gap-2 text-sm sm:text-base"
               >
                 <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
                 Explore Side Projects
               </button>
               <a 
                 href="#contact" 
-                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1 shadow-lg text-sm sm:text-base"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1 shadow-lg text-sm sm:text-base text-center"
               >
                 Get in Touch
               </a>
