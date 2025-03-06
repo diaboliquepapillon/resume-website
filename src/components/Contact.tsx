@@ -1,18 +1,45 @@
+
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Mail, MessageSquare, MapPin, Clock, Send, ExternalLink } from 'lucide-react';
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully!");
-    setEmail('');
-    setMessage('');
+    
+    if (!email || !message) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([{ email, message }]);
+        
+      if (error) {
+        console.error("Error submitting form:", error);
+        toast.error("There was a problem sending your message. Please try again.");
+      } else {
+        toast.success("Message sent successfully!");
+        setEmail('');
+        setMessage('');
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("There was a problem sending your message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -116,9 +143,10 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="w-full p-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors duration-300 flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
                   >
                     <Send className="w-4 h-4" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </DialogContent>
