@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Tabs,
@@ -32,6 +33,26 @@ const education = [
 ];
 
 const workExperience = [
+  {
+    title: "Program Facilitator",
+    company: "Australian School of Entrepreneurship",
+    period: "Feb 2024 - Present",
+    description: [
+      "Lead group workshops, develop engaging content, conduct public speaking, and provide individual mentoring sessions",
+      "Assist in planning, coordinating, and delivering special events and training programs to ensure smooth execution"
+    ],
+    skills: ["Workshop Facilitation", "Content Development", "Public Speaking", "Mentoring", "Event Planning", "Program Delivery"]
+  },
+  {
+    title: "Campaign Assistant",
+    company: "Julian Hill MP Office",
+    period: "Jan 2024 - Present",
+    description: [
+      "Collected and analysed voter data from door-to-door canvassing, identifying key trends to optimise campaign strategy",
+      "Transformed raw field data into actionable insights using statistical analysis and data visualisation"
+    ],
+    skills: ["Data Collection", "Data Analysis", "Strategic Planning", "Statistical Analysis", "Data Visualization"]
+  },
   {
     title: "Faculty of IT Ambassador",
     company: "Monash University",
