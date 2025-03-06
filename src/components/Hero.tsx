@@ -51,7 +51,7 @@ const Hero = () => {
                   <Database className="w-6 h-6 sm:w-7 sm:h-7" />
                 </a>
                 <a 
-                  href="https://drive.google.com/drive/folders/1r58UaN21Io3vhiS7Dk0Lp1_GD92UnGbP?usp=sharing" 
+                  href="https://drive.google.com/drive/folders/1r58UaN21Io3vhiS7Dk0Lp1_GD92UnGbP?usp=drive_link" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-all duration-300 hover:-translate-y-1"
