@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, MapPin, Phone, Briefcase, GraduationCap, Code, Brain } from 'lucide-react';
+import { Mail, MapPin, Briefcase, GraduationCap, Code, Brain } from 'lucide-react';
 
 const ResumeTab = () => {
   return (
@@ -54,10 +54,6 @@ const ResumeTab = () => {
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4 flex-shrink-0" />
               Melbourne, Australia
-            </span>
-            <span className="flex items-center gap-1">
-              <Phone className="w-4 h-4 flex-shrink-0" />
-              +61 424 153 964
             </span>
           </div>
         </div>
